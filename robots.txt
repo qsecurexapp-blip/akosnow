@@ -1,7 +1,5 @@
-# Robots.txt for QSecureX & Akosnow Ecosystem
 User-agent: *
 Allow: /
-Allow: /assets/
-Allow: /akosnow website/
 
-Sitemap: https://qsecurex.akosnow.com/sitemap.xml
+# Sitemap Location for Googlebot and Bingbot
+Sitemap: https://qsecurex.space/sitemap.xml
