@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MSGE | Integration Hub (by Akosnow)</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Connect your website, CRM, POS, forms, and business tools to MSGE. Receive every lead, order, appointment, and business alert in one unified inbox.">
+  <link rel="canonical" href="https://akosnow.com/integrations.html">
+  
+  <!-- Page Favicon Logo -->
+  <link rel="icon" type="image/png" href="icons/logo2.png">
+  <link rel="apple-touch-icon" href="icons/logo2.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=2">
+
+  <!-- Theme Script (Inline to prevent Flash of Unstyled Theme) -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('akosnow-theme') || 'light';
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+      } else {
+        document.documentElement.classList.remove('dark-theme');
+      }
+    })();
+  </script>
+
+  <style>
+    .integrations-directory {
+      margin-top: 6rem;
+      position: relative;
+      overflow: hidden;
+      padding: 3rem 1.5rem 6rem;
+    }
+
+    .ambient-glow {
+      position: absolute;
+      top: -10%;
+      left: 15%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, rgba(249, 115, 22, 0) 70%);
+      filter: blur(100px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .directory-hero {
+      display: grid;
+      grid-template-columns: 1.150fr 0.850fr;
+      gap: 3.5rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+      align-items: center;
+    }
+
+    .hero-info h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--brand-primary) 0%, #EA580C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-info .by-akosnow {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .hero-info p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    /* Expanded Architecture Section CSS Flow */
+    .arch-flow-box {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .arch-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .arch-grid-sources {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.4rem;
+      width: 100%;
+    }
+
+    .arch-badge {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      padding: 0.45rem 0.25rem;
+      border-radius: 0.375rem;
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .arch-arrow-down {
+      text-align: center;
+      color: var(--brand-primary);
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1;
+      margin: 0.1rem 0;
+    }
+
+    .arch-hub-box {
+      background: linear-gradient(135deg, var(--brand-primary) 0%, #EA580C 100%);
+      color: white;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 20px rgba(249, 115, 22, 0.2);
+    }
+
+    .arch-grid-outputs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.4rem;
+      width: 100%;
+    }
+
+    .arch-grid-devices {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.4rem;
+      width: 100%;
+    }
+
+    /* Integration Statistics Block */
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+    }
+
+    .metric-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Developer Code Example Block */
+    .developer-preview-box {
+      background: #1e1e2e;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 1rem;
+      padding: 2rem;
+      color: #cdd6f4;
+      font-size: 0.85rem;
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .preview-info h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .preview-info p {
+      color: #a6adc8;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .preview-code-block {
+      background: #11111b;
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      overflow-x: auto;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    /* Categories Tabs and Search Row */
+    .search-filter-row {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .search-input-wrapper {
+      position: relative;
+    }
+
+    .search-input-wrapper input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .search-input-wrapper input:focus {
+      outline: none;
+      border-color: var(--brand-primary);
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+    }
+
+    .search-icon-svg {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      pointer-events: none;
+    }
+
+    .categories-tabs {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .category-tab {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.45rem 0.9rem;
+      border-radius: 2rem;
+      transition: all 0.2s;
+    }
+
+    .category-tab.active, .category-tab:hover {
+      border-color: var(--brand-primary);
+      color: var(--brand-primary);
+      background: rgba(249, 115, 22, 0.05);
+    }
+
+    /* Card capabilities and grids */
+    .connectors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+    }
+
+    .connector-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .connector-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--brand-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .connector-badge-top {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    .badge-available {
+      background: rgba(16, 185, 129, 0.1);
+      color: #10B981;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    .badge-dev {
+      background: rgba(245, 158, 11, 0.1);
+      color: #F59E0B;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+
+    .badge-planned {
+      background: rgba(99, 102, 241, 0.1);
+      color: #6366F1;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .connector-logo {
+      font-size: 2.25rem;
+      margin-bottom: 1.25rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+    }
+
+    .connector-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .connector-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .capability-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1.75rem;
+      flex-grow: 1;
+    }
+
+    .capability-list li {
+      font-size: 0.82rem;
+      color: var(--text-primary);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .capability-list li span {
+      color: #10B981;
+      font-weight: bold;
+    }
+
+    .connector-btn {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      text-align: center;
+      padding: 0.65rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .connector-btn:hover {
+      background: var(--brand-primary);
+      color: white;
+      border-color: var(--brand-primary);
+    }
+
+    /* Works With Compatibility Grid */
+    .works-with-section {
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    .works-with-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 2.5rem;
+    }
+
+    .works-with-grid {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 1rem;
+    }
+
+    .stack-badge {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 0.75rem 0.25rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* Supported Events List */
+    .events-section {
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    .events-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 2.5rem;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 1rem;
+    }
+
+    .event-badge {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 0.75rem 0.25rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      border-left: 3px solid var(--brand-primary);
+    }
+
+    /* Use Cases Grid Section */
+    .use-cases-section {
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+    }
+
+    .use-cases-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .use-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .use-case-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .use-case-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .use-case-card h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .use-case-card p {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Security and Trust section */
+    .security-trust-section {
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+    }
+
+    .security-trust-card {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.01) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.15);
+      border-radius: 1.25rem;
+      padding: 2.5rem 2rem;
+    }
+
+    .security-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .security-header h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .security-item {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .security-check {
+      color: #10B981;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .security-item h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .security-item p {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* Bottom CTA area */
+    .bottom-cta {
+      max-width: 700px;
+      margin: 5rem auto 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, rgba(249, 115, 22, 0.02) 100%);
+      border: 1px solid rgba(249, 115, 22, 0.15);
+      border-radius: 1.25rem;
+      padding: 3rem 2rem;
+    }
+
+    .bottom-cta h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .bottom-cta p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 968px) {
+      .directory-hero {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+      .metrics-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .developer-preview-box {
+        grid-template-columns: 1fr;
+      }
+      .search-filter-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .categories-tabs {
+        justify-content: center;
+      }
+      .connectors-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .works-with-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+      .events-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+      .use-cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .security-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .directory-hero h1 {
+        font-size: 2.75rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .connectors-grid {
+        grid-template-columns: 1fr;
+      }
+      .works-with-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .events-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .use-cases-grid {
+        grid-template-columns: 1fr;
+      }
+      .security-grid {
+        grid-template-columns: 1fr;
+      }
+      .metrics-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="light-theme">
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Akosnow Home">
+        <img src="icons/logo2.png" alt="Akosnow Logo" class="logo-icon" style="width: 2.25rem; height: 2.25rem; object-fit: contain;">
+        <span class="brand-name">Akosnow</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#products" class="nav-link">Products</a></li>
+          <li><a href="index.html#solutions" class="nav-link">Solutions</a></li>
+          <li><a href="partner.html" class="nav-link">Partner</a></li>
+          <li><a href="msge.html" class="nav-link">MSGE App</a></li>
+          <li><a href="integrations.html" class="nav-link active">Integrations</a></li>
+          <li><a href="developer.html" class="nav-link">Developer</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Toggles -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle Hamburger -->
+        <button class="mobile-hamburger" id="mobileHamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Upgraded Integrations Hub Content -->
+  <main class="integrations-directory">
+    <div class="ambient-glow"></div>
+
+    <div class="directory-hero">
+      <div class="hero-info">
+        <h1>MSGE Integration Hub</h1>
+        <span class="by-akosnow">by Akosnow</span>
+        <p>Connect your website, CRM, POS, forms, and business tools to MSGE. Receive every lead, order, appointment, and business alert in one unified inbox.</p>
+      </div>
+
+      <!-- CSS Architecture Flow Diagram -->
+      <div class="arch-flow-box">
+        <div>
+          <span class="arch-label">Sources</span>
+          <div class="arch-grid-sources">
+            <div class="arch-badge">🌐 Websites</div>
+            <div class="arch-badge">🛒 WooCommerce</div>
+            <div class="arch-badge">🛒 Shopify</div>
+          </div>
+          <div class="arch-grid-sources" style="margin-top: 0.4rem;">
+            <div class="arch-badge">📢 Meta Ads</div>
+            <div class="arch-badge">📋 Forms</div>
+            <div class="arch-badge">⚙️ REST API</div>
+          </div>
+        </div>
+        
+        <div class="arch-arrow-down">⬇</div>
+        
+        <div class="arch-hub-box">
+          ☁️ MSGE Cloud Gateway
+        </div>
+        
+        <div class="arch-arrow-down">⬇</div>
+        
+        <div>
+          <span class="arch-label">Workspaces</span>
+          <div class="arch-grid-outputs">
+            <div class="arch-badge">📊 POS Alerts</div>
+            <div class="arch-badge">🚗 CRM Logs</div>
+            <div class="arch-badge">👤 Sales Leads</div>
+          </div>
+          <div class="arch-grid-outputs" style="margin-top: 0.4rem;">
+            <div class="arch-badge">🩺 Clinic</div>
+            <div class="arch-badge">🎫 Support</div>
+            <div class="arch-badge">🔔 General</div>
+          </div>
+        </div>
+
+        <div class="arch-arrow-down">⬇</div>
+
+        <div>
+          <span class="arch-label">Notification Client Inboxes</span>
+          <div class="arch-grid-devices">
+            <div class="arch-badge">📱 Desktop / macOS</div>
+            <div class="arch-badge">📱 Windows / Android</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Integration Statistics Block -->
+    <div class="metrics-row">
+      <div class="metric-card">
+        <div class="metric-value">4</div>
+        <div class="metric-label">Available Today</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">9</div>
+        <div class="metric-label">Coming Soon</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">v1</div>
+        <div class="metric-label">API Version</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">&lt; 15m</div>
+        <div class="metric-label">Average Setup</div>
+      </div>
+    </div>
+
+    <!-- Developer API Example Box -->
+    <div class="developer-preview-box">
+      <div class="preview-info">
+        <h3>Developer REST API</h3>
+        <p>Developers can route custom forms and business event payloads using a simple, clean JSON post request. Test local dispatches immediately in our sandbox.</p>
+        <code style="background: rgba(255,255,255,0.05); padding: 0.35rem 0.65rem; border-radius: 4px; font-family: monospace; color: #f5c2e7;">POST /api/business/lead</code>
+      </div>
+      <div class="preview-code-block">
+<span style="color: #cba6f7;">{</span>
+  <span style="color: #f38ba8;">"workspaceId"</span>: <span style="color: #a6e3a1;">"WS_84HK91"</span>,
+  <span style="color: #f38ba8;">"apiKey"</span>: <span style="color: #a6e3a1;">"ak_live_xxxxxxxxx"</span>,
+  <span style="color: #f38ba8;">"event"</span>: <span style="color: #a6e3a1;">"lead"</span>,
+  <span style="color: #f38ba8;">"data"</span>: <span style="color: #cba6f7;">{</span>
+    <span style="color: #f38ba8;">"name"</span>: <span style="color: #a6e3a1;">"John"</span>,
+    <span style="color: #f38ba8;">"phone"</span>: <span style="color: #a6e3a1;">"+91 99955 44332"</span>,
+    <span style="color: #f38ba8;">"email"</span>: <span style="color: #a6e3a1;">"john@gmail.com"</span>
+  <span style="color: #cba6f7;">}</span>
+<span style="color: #cba6f7;">}</span>
+      </div>
+    </div>
+
+    <!-- Search / Filter Row -->
+    <div class="search-filter-row">
+      <div class="search-input-wrapper">
+        <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchBar" placeholder="Search connectors (e.g. Shopify, WordPress)..." onkeyup="filterConnectors()">
+      </div>
+
+      <div class="categories-tabs">
+        <button class="category-tab active" onclick="filterCategory('all')">All</button>
+        <button class="category-tab" onclick="filterCategory('web')">🌐 Websites</button>
+        <button class="category-tab" onclick="filterCategory('ecom')">🛒 Commerce</button>
+        <button class="category-tab" onclick="filterCategory('forms')">📋 Forms</button>
+        <button class="category-tab" onclick="filterCategory('dev')">⚙️ Developers</button>
+        <button class="category-tab" onclick="filterCategory('auto')">🤖 Automation</button>
+        <button class="category-tab" onclick="filterCategory('ent')">🏢 Enterprise</button>
+      </div>
+    </div>
+
+    <!-- Connectors Grid -->
+    <div class="connectors-grid" id="connectorsGrid">
+      
+      <!-- Custom REST API -->
+      <div class="connector-card" data-category="dev">
+        <span class="connector-badge-top badge-available">✓ Available Now</span>
+        <div class="connector-logo">⚙️</div>
+        <h3>Custom REST API</h3>
+        <p>Deploy highly tailored HTTP POST queries. Fully supports dynamic custom form fields and automated data column compilation.</p>
+        <ul class="capability-list">
+          <li><span>✓</span> JSON Payloads</li>
+          <li><span>✓</span> HTTPS Webhooks</li>
+          <li><span>✓</span> Dynamic Custom Fields</li>
+          <li><span>✓</span> Any Website Link</li>
+        </ul>
+        <a href="developer.html" class="connector-btn">Read API Docs</a>
+      </div>
+
+      <!-- JavaScript SDK -->
+      <div class="connector-card" data-category="dev">
+        <span class="connector-badge-top badge-available">✓ Available Now</span>
+        <div class="connector-logo">📦</div>
+        <h3>JavaScript SDK</h3>
+        <p>Native client-side library to track form submit events and dispatch alert notifications cleanly from any modern frontend stack.</p>
+        <ul class="capability-list">
+          <li><span>✓</span> Client Scripts</li>
+          <li><span>✓</span> Form Binding</li>
+          <li><span>✓</span> Async Event Dispatch</li>
+          <li><span>✓</span> Simple Initialization</li>
+        </ul>
+        <a href="developer.html" class="connector-btn">Read SDK Guide</a>
+      </div>
+
+      <!-- Webhooks -->
+      <div class="connector-card" data-category="dev">
+        <span class="connector-badge-top badge-available">✓ Available Now</span>
+        <div class="connector-logo">📡</div>
+        <h3>Webhooks</h3>
+        <p>Configure HTTP webhook dispatchers to send data payloads to your MSGE endpoint instantly as events happen.</p>
+        <ul class="capability-list">
+          <li><span>✓</span> HTTP POST Gateway</li>
+          <li><span>✓</span> Custom Endpoint URIs</li>
+          <li><span>✓</span> Real-time Dispatch</li>
+          <li><span>✓</span> Failover Retries</li>
+        </ul>
+        <a href="developer.html" class="connector-btn">Webhook Specs</a>
+      </div>
+
+      <!-- Developer Documentation -->
+      <div class="connector-card" data-category="dev">
+        <span class="connector-badge-top badge-available">✓ Available Now</span>
+        <div class="connector-logo">📚</div>
+        <h3>Developer Docs</h3>
+        <p>Complete step-by-step roadmap documentation, payload schemas, and sandbox tools for local integration testing.</p>
+        <ul class="capability-list">
+          <li><span>✓</span> Payload Schemas</li>
+          <li><span>✓</span> Setup Roadmaps</li>
+          <li><span>✓</span> Local Sandbox Console</li>
+          <li><span>✓</span> Code Copy Snippets</li>
+        </ul>
+        <a href="developer.html" class="connector-btn">Open Guide</a>
+      </div>
+
+      <!-- Shopify App -->
+      <div class="connector-card" data-category="ecom">
+        <span class="connector-badge-top badge-dev">🚧 In Development</span>
+        <div class="connector-logo">🛒</div>
+        <h3>Shopify App</h3>
+        <p>Instantly route new purchase logs, low stock inventory thresholds, and checkout abandonments directly into your POS Workspace.</p>
+        <ul class="capability-list">
+          <li><span>✓</span> Purchase Tracking</li>
+          <li><span>✓</span> Stock Out Alerts</li>
+          <li><span>✓</span> Abandoned Checkout Logs</li>
+        </ul>
+        <a href="#" class="connector-btn" style="pointer-events: none; opacity: 0.6;">Request Beta Access</a>
+      </div>
+
+      <!-- WordPress / WooCommerce -->
+      <div class="connector-card" data-category="ecom">
+        <span class="connector-badge-top badge-dev">🚧 In Development</span>
+        <div class="connector-logo">📝</div>
+        <h3>WordPress / WooCommerce</h3>
+        <p>Integrate WooCommerce store checkout orders or Contact Form 7 submissions with zero coding using our pre-built MSGE widget.</p>
+        <ul class="capability-list">
+          <li><span>✓</span> WordPress Plugin</li>
+          <li><span>✓</span> Form Binding Widget</li>
+          <li><span>✓</span> WooCommerce Order Sync</li>
+        </ul>
+        <a href="#" class="connector-btn" style="pointer-events: none; opacity: 0.6;">Request Beta Access</a>
+      </div>
+
+      <!-- Meta Lead Ads -->
+      <div class="connector-card" data-category="forms">
+        <span class="connector-badge-top badge-dev">🚧 In Development</span>
+        <div class="connector-logo">📢</div>
+        <h3>Meta Lead Ads</h3>
+        <p>Connect your active Facebook and Instagram lead forms. Automatically route customer entries directly to your Sales Workspace.</p>
+        <ul class="capability-list">
+          <li><span>✓</span> Ad Lead Capture</li>
+          <li><span>✓</span> Direct Graph Sync</li>
+          <li><span>✓</span> Instant Sales Routing</li>
+        </ul>
+        <a href="#" class="connector-btn" style="pointer-events: none; opacity: 0.6;">Request Beta Access</a>
+      </div>
+
+      <!-- Google Forms -->
+      <div class="connector-card" data-category="forms">
+        <span class="connector-badge-top badge-dev">🚧 In Development</span>
+        <div class="connector-logo">📊</div>
+        <h3>Google Forms</h3>
+        <p>Deploy a tiny Apps Script trigger inside your sheets to route form submissions straight to your MSGE mobile client.</p>
+        <ul class="capability-list">
+          <li><span>✓</span> Apps Script Hook</li>
+          <li><span>✓</span> Google Sheet Sync</li>
+          <li><span>✓</span> Instant Notification Chimes</li>
+        </ul>
+        <a href="#" class="connector-btn" style="pointer-events: none; opacity: 0.6;">Request Beta Access</a>
+      </div>
+
+      <!-- Typeform -->
+      <div class="connector-card" data-category="forms">
+        <span class="connector-badge-top badge-dev">🚧 In Development</span>
+        <div class="connector-logo">📋</div>
+        <h3>Typeform</h3>
+        <p>Feed high-converting questionnaire responses and customer registration files straight to your support workspaces in real time.</p>
+        <ul class="capability-list">
+          <li><span>✓</span> Dynamic Questionnaires</li>
+          <li><span>✓</span> Lead Card Generation</li>
+          <li><span>✓</span> Live Support Inbox Sync</li>
+        </ul>
+        <a href="#" class="connector-btn" style="pointer-events: none; opacity: 0.6;">Request Beta Access</a>
+      </div>
+
+      <!-- Zapier -->
+      <div class="connector-card" data-category="auto">
+        <span class="connector-badge-top badge-planned">🔜 Planned</span>
+        <div class="connector-logo">⚡</div>
+        <h3>Zapier Integration</h3>
+        <p>Automate alert streams across thousands of enterprise applications like Salesforce, HubSpot, and Slack seamlessly.</p>
+        <ul class="capability-list">
+          <li><span>✓</span> 5000+ App Connections</li>
+          <li><span>✓</span> Automated Trigger Synced</li>
+          <li><span>✓</span> Multi-Step Action Flows</li>
+        </ul>
+        <a href="#" class="connector-btn" style="pointer-events: none; opacity: 0.6;">Keep Me Posted</a>
+      </div>
+
+      <!-- Make.com -->
+      <div class="connector-card" data-category="auto">
+        <span class="connector-badge-top badge-planned">🔜 Planned</span>
+        <div class="connector-logo">🔗</div>
+        <h3>Make.com</h3>
+        <p>Create visual data integration pipelines and filter incoming events to your unified inbox dynamically.</p>
+        <ul class="capability-list">
+          <li><span>✓</span> Visual Flow Diagrams</li>
+          <li><span>✓</span> Live Data Mapper</li>
+          <li><span>✓</span> Advanced Logic Filters</li>
+        </ul>
+        <a href="#" class="connector-btn" style="pointer-events: none; opacity: 0.6;">Keep Me Posted</a>
+      </div>
+
+      <!-- Slack -->
+      <div class="connector-card" data-category="ent">
+        <span class="connector-badge-top badge-planned">🔜 Planned</span>
+        <div class="connector-logo">💬</div>
+        <h3>Slack Workspace</h3>
+        <p>Cross-post critical updates, logs, and customer chat notifications from MSGE directly to team channels.</p>
+        <ul class="capability-list">
+          <li><span>✓</span> Team Channel Postings</li>
+          <li><span>✓</span> Operations Log Sync</li>
+          <li><span>✓</span> Interactive Action Cards</li>
+        </ul>
+        <a href="#" class="connector-btn" style="pointer-events: none; opacity: 0.6;">Keep Me Posted</a>
+      </div>
+
+      <!-- Microsoft Teams -->
+      <div class="connector-card" data-category="ent">
+        <span class="connector-badge-top badge-planned">🔜 Planned</span>
+        <div class="connector-logo">👥</div>
+        <h3>Microsoft Teams</h3>
+        <p>Bridge high-priority event alerts to your enterprise organization chats for accelerated collaboration.</p>
+        <ul class="capability-list">
+          <li><span>✓</span> Enterprise Chat Alerting</li>
+          <li><span>✓</span> Group Space Bridging</li>
+          <li><span>✓</span> Critical Outage Warnings</li>
+        </ul>
+        <a href="#" class="connector-btn" style="pointer-events: none; opacity: 0.6;">Keep Me Posted</a>
+      </div>
+
+    </div>
+
+    <!-- Works With Compatibility Grid -->
+    <section class="works-with-section">
+      <h2>Compatible Stacks & Frameworks</h2>
+      <div class="works-with-grid">
+        <div class="stack-badge">HTML</div>
+        <div class="stack-badge">React</div>
+        <div class="stack-badge">Vue</div>
+        <div class="stack-badge">Angular</div>
+        <div class="stack-badge">Flutter Web</div>
+        <div class="stack-badge">Laravel</div>
+        <div class="stack-badge">Node.js</div>
+        <div class="stack-badge">PHP</div>
+        <div class="stack-badge">ASP.NET</div>
+      </div>
+    </section>
+
+    <!-- Supported Events Section -->
+    <section class="events-section">
+      <h2>Supported Operational Events</h2>
+      <div class="events-grid">
+        <div class="event-badge">Lead</div>
+        <div class="event-badge">Appointment</div>
+        <div class="event-badge">Order</div>
+        <div class="event-badge">Payment</div>
+        <div class="event-badge">Inventory</div>
+        <div class="event-badge">Booking</div>
+        <div class="event-badge">Support</div>
+        <div class="event-badge">Membership</div>
+        <div class="event-badge">Custom Event</div>
+      </div>
+    </section>
+
+    <!-- Use Cases Grid Section -->
+    <section class="use-cases-section">
+      <h2>Outcome-Driven Use Cases</h2>
+      <div class="use-cases-grid">
+        <div class="use-case-card">
+          <div class="use-case-icon">💇</div>
+          <h4>Salon Appointments</h4>
+          <p>Clients book time slots online ➔ MSGE alerts staff ➔ instant bookings confirmation.</p>
+        </div>
+        <div class="use-case-card">
+          <div class="use-case-icon">🍕</div>
+          <h4>Restaurant Orders</h4>
+          <p>New WooCommerce orders ➔ kitchen display alerts chimes ➔ instant cooking dispatch.</p>
+        </div>
+        <div class="use-case-card">
+          <div class="use-case-icon">🩺</div>
+          <h4>Clinic Bookings</h4>
+          <p>Patients submit booking dates ➔ MSGE alerts doctor portal ➔ schedules confirmed.</p>
+        </div>
+        <div class="use-case-card">
+          <div class="use-case-icon">🌐</div>
+          <h4>Website Lead Forms</h4>
+          <p>Client submits contact form ➔ Sales rep alerts ➔ WhatsApp contact in 1 click.</p>
+        </div>
+        <div class="use-case-card">
+          <div class="use-case-icon">🚗</div>
+          <h4>Garage Service Slots</h4>
+          <p>Car registration bookings ➔ mechanic receives alerts ➔ bay scheduled.</p>
+        </div>
+        <div class="use-case-card">
+          <div class="use-case-icon">🎫</div>
+          <h4>Support Tickets</h4>
+          <p>Client submits query card ➔ routes to Support workspace ➔ issue closed.</p>
+        </div>
+        <div class="use-case-card">
+          <div class="use-case-icon">👥</div>
+          <h4>Membership Forms</h4>
+          <p>Application submits ➔ admins receive priority alert ➔ access credentials issued.</p>
+        </div>
+        <div class="use-case-card">
+          <div class="use-case-icon">⚡</div>
+          <h4>Custom Events</h4>
+          <p>Deploy custom JSON objects to route any telemetry alert straight to your phone.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Security Trust Section -->
+    <section class="security-trust-section">
+      <div class="security-trust-card">
+        <div class="security-header">
+          <div style="font-size: 2.25rem;">🛡️</div>
+          <h3>Enterprise-Grade Security Standards</h3>
+        </div>
+        <div class="security-grid">
+          <div class="security-item">
+            <div class="security-check">✓</div>
+            <h4>Encrypted Transport</h4>
+            <p>TLS 1.3 encryption on all webhook routing requests.</p>
+          </div>
+          <div class="security-item">
+            <div class="security-check">✓</div>
+            <h4>API Authentication</h4>
+            <p>Protected requests via secure Firebase Bearer tokens.</p>
+          </div>
+          <div class="security-item">
+            <div class="security-check">✓</div>
+            <h4>Access Tokens</h4>
+            <p>Manage multiple granular credentials safely.</p>
+          </div>
+          <div class="security-item">
+            <div class="security-check">✓</div>
+            <h4>Role Permissions</h4>
+            <p>Restricted actions assigned by user groups.</p>
+          </div>
+          <div class="security-item" style="margin-top: 1rem;">
+            <div class="security-check">✓</div>
+            <h4>Rate Limiting</h4>
+            <p>Gateway traffic guards protecting backend systems from DDoS.</p>
+          </div>
+          <div class="security-item" style="margin-top: 1rem;">
+            <div class="security-check">✓</div>
+            <h4>Audit Logs</h4>
+            <p>Track request dispatches and security events transparently.</p>
+          </div>
+          <div class="security-item" style="margin-top: 1rem;">
+            <div class="security-check">✓</div>
+            <h4>Encrypted Storage</h4>
+            <p>AES-256 databases encryption protecting message storage logs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <div class="bottom-cta">
+      <h3>Need a Custom Integration?</h3>
+      <p>Use our developer SDKs and REST API to connect any home-grown system, local database, or legacy software in under 15 minutes.</p>
+      <a href="developer.html" class="btn btn-primary">Go to Developer Center</a>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-info-col">
+        <a href="index.html" class="footer-logo">
+          <img src="icons/logo2.png" alt="Akosnow Logo" style="width: 2rem; height: 2rem; object-fit: contain; vertical-align: middle;">
+          <span>Akosnow</span>
+        </a>
+        <p class="footer-desc" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.25rem;">
+          Akosnow develops secure, scalable, and business-focused software solutions that help organizations improve efficiency, automate operations, and accelerate digital transformation.
+        </p>
+        <p class="footer-tagline" style="font-weight: 700;">Smart Software. Smarter Business.</p>
+        <p class="footer-copyright">&copy; 2026 Akosnow. All rights reserved.</p>
+      </div>
+
+      <!-- Links Column 1: Products -->
+      <div class="footer-links-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="index.html#products">Billing & POS</a></li>
+          <li><a href="index.html#products">Akosnow CRM</a></li>
+          <li><a href="index.html#products">Akosnow Clinic</a></li>
+          <li><a href="index.html#products">Restaurant POS</a></li>
+          <li><a href="index.html#products">Akosnow Garage</a></li>
+          <li><a href="index.html#products">Akosnow Pharmacy</a></li>
+          <li><a href="index.html#products">Akosnow Hotel</a></li>
+          <li><a href="index.html#products">Akosnow School</a></li>
+          <li><a href="index.html#products">Akosnow Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Solutions -->
+      <div class="footer-links-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="index.html#solutions">Retail & Commerce</a></li>
+          <li><a href="index.html#solutions">Healthcare Systems</a></li>
+          <li><a href="index.html#solutions">Hospitality Operations</a></li>
+          <li><a href="index.html#solutions">Automotive Workshops</a></li>
+          <li><a href="index.html#solutions">Educational Facilities</a></li>
+          <li><a href="index.html#solutions">Community Platforms</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3: Company & Resources -->
+      <div class="footer-links-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#why-choose">About Us</a></li>
+          <li><a href="partner.html">Partner Program</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+        <h4 style="margin-top: 1.5rem;">Resources</h4>
+        <ul>
+          <li><a href="developer.html">Documentation</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#contact">Support</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Search and filter functionalities -->
+  <script>
+    let activeCategory = 'all';
+
+    function filterConnectors() {
+      const input = document.getElementById('searchBar').value.toLowerCase();
+      const cards = document.getElementsByClassName('connector-card');
+
+      for (let i = 0; i < cards.length; i++) {
+        const card = cards[i];
+        const title = card.getElementsByTagName('h3')[0].innerText.toLowerCase();
+        const desc = card.getElementsByTagName('p')[0].innerText.toLowerCase();
+        const cat = card.getAttribute('data-category');
+
+        const matchesSearch = title.includes(input) || desc.includes(input);
+        const matchesCategory = activeCategory === 'all' || cat === activeCategory;
+
+        if (matchesSearch && matchesCategory) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      }
+    }
+
+    function filterCategory(catName) {
+      activeCategory = catName;
+      
+      const tabs = document.getElementsByClassName('category-tab');
+      for (let i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('active');
+      }
+
+      // Add active to clicked tab
+      event.currentTarget.classList.add('active');
+
+      filterConnectors();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO Meta Tags -->
+  <title>Akosnow & QSecureX | Smart Software & Offline Privacy Vault for Every Business</title>
+  <meta name="description" content="Akosnow develops secure, scalable business software solutions including Billing & POS, CRM, Akosnow MSGE push alerts, and QSecureX offline privacy vault software with AES-256-GCM encryption.">
+  <meta name="keywords" content="Akosnow, QSecureX, QSecure, Akosnow MSGE, Akosnow POS, B2B SaaS, Billing, POS, CRM, Healthcare Software, Restaurant POS, Cybersecurity, Offline Privacy Vault, Custom Software Development">
+  <link rel="canonical" href="https://akosnow.com/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://akosnow.com/">
+  <meta property="og:title" content="Akosnow | Smart Software for Every Business">
+  <meta property="og:description" content="Secure, scalable, and modern B2B software ecosystem built to simplify operations, improve productivity, and accelerate business growth.">
+  <meta property="og:image" content="https://akosnow.com/assets/akosnow_hero.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://akosnow.com/">
+  <meta property="twitter:title" content="Akosnow | Smart Software for Every Business">
+  <meta property="twitter:description" content="Secure, scalable, and modern B2B software ecosystem built to simplify operations, improve productivity, and accelerate business growth.">
+  <meta property="twitter:image" content="https://akosnow.com/assets/akosnow_hero.png">
+
+  <!-- Page Favicon Logo -->
+  <link rel="icon" type="image/png" href="icons/logo2.png">
+  <link rel="apple-touch-icon" href="icons/logo2.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=2">
+
+  <!-- Theme Script (Inline to prevent Flash of Unstyled Theme) -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('akosnow-theme') || 'light';
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+      } else {
+        document.documentElement.classList.remove('dark-theme');
+      }
+    })();
+  </script>
+
+  <!-- Schema.org JSON-LD Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://akosnow.com/#organization",
+        "name": "Akosnow",
+        "url": "https://akosnow.com/",
+        "logo": "https://akosnow.com/icons/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "sales@akosnow.com",
+          "areaServed": "IN",
+          "availableLanguage": ["en", "ml", "hi"]
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kollam",
+          "addressRegion": "Kerala",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/akosnow",
+          "https://www.facebook.com/akosnow",
+          "https://www.instagram.com/akosnow",
+          "https://github.com/akosnow"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://akosnow.com/#website",
+        "url": "https://akosnow.com/",
+        "name": "Akosnow Business Software Platform",
+        "publisher": {
+          "@id": "https://akosnow.com/#organization"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Akosnow Billing & POS",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, macOS, Linux, Android, iOS",
+        "description": "Complete billing, inventory and business management software for retail and service industries."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Akosnow CRM",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Windows, macOS, Android, iOS",
+        "description": "Customer Relationship Management Platform to track leads, pipelines and customers."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Akosnow Clinic",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, macOS, Linux, Android, iOS",
+        "description": "Clinic management software with secure patient records, digital prescriptions, and scheduling."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Akosnow Restaurant",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, Android, iOS, Web",
+        "description": "POS platform for restaurants with kitchen order printing, table tracking, and billing integrations."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Akosnow Pharmacy",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "description": "Specialized inventory management and billing system designed for pharmacies and drug stores."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Akosnow Hotel",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, macOS, Web",
+        "description": "Property Management System (PMS) with room booking, check-in calendars, and housekeeping logs."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Akosnow Garage",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, macOS, Android",
+        "description": "Automotive service center workshop tracker, mechanics assigner, and spare parts inventory system."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Akosnow School",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "description": "Student management system with fee logs, parent notifications, report cards, and class lists."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Akosnow Community",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "description": "Cooperative operations database and portal for local clubs, groups, and micro-financing hubs."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Akosnow MSGE",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Windows, macOS",
+        "description": "B2B enterprise resource management system for multi-branch sync and large warehouses."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "QSecureX – Cybersecurity & Privacy Platform",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Windows, macOS, Linux, Android, iOS",
+        "description": "Enterprise-grade privacy and cybersecurity platform for offline local data encryption."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Custom Software Development",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows, macOS, Linux, Android, iOS",
+        "description": "Tailored customization matching your specific business workflows and hardware systems setups."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can Akosnow software be customized?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Every business has individual workflow rules. Akosnow applications are modular, allowing us to customize data logs, interfaces, checkout scripts, and invoices layouts to align with your business operations guidelines."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Akosnow software run offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. All core products (including Billing & POS, Clinic, Pharmacy, Restaurant) run fully offline using local database endpoints. This prevents database timeouts and operations disruptions if local ISP signals fail."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you provide direct developer support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. When purchasing Akosnow licenses, you bypass layered ticketing lines and gain direct access to our core systems engineers to troubleshoot setups or coordinate customizations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my business data secure with Akosnow?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Business records are stored inside encrypted local folder databases. We support cross-platform configurations, role access credentials, audit logs, and optional private cloud sync profiles."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does cloud synchronization work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By default, systems store inputs locally. If clients configure private cloud endpoints, local processes detect connection availability and sync changes silently in the background."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I request a custom feature?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Submit details using our demo request contact form, and select 'Custom Software Development' from the dropdown list. Our developer lead will call to coordinate requirements."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" id="announcementBar">
+    <div class="announcement-content">
+      <span class="announcement-badge">🚀 New</span>
+      <span class="announcement-text">Complete Business Software Ecosystem is now live. Explore products below!</span>
+    </div>
+    <button class="announcement-close" id="closeAnnouncement" aria-label="Close announcement">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" aria-label="Akosnow Home">
+        <img src="icons/logo2.png" alt="Akosnow Logo" class="logo-icon" style="width: 2.25rem; height: 2.25rem; object-fit: contain;">
+        <span class="brand-name">Akosnow</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="#products" class="nav-link">Products</a></li>
+          <li><a href="#solutions" class="nav-link">Solutions</a></li>
+          <li><a href="partner.html" class="nav-link">Partner</a></li>
+          <li><a href="msge.html" class="nav-link">MSGE App</a></li>
+          <li><a href="integrations.html" class="nav-link">Integrations</a></li>
+          <li><a href="developer.html" class="nav-link">Developer</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Toggles -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme">
+          <!-- Light Icon -->
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Dark Icon -->
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn btn-primary nav-cta-btn">Request Demo</a>
+
+        <!-- Mobile Menu Toggle Hamburger -->
+        <button class="mobile-hamburger" id="mobileHamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section dot-grid-bg">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge-container">
+          <span class="hero-badge">🚀 Complete B2B Software Ecosystem</span>
+        </div>
+        <h1 class="hero-title" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 3.5rem; line-height: 1.15; margin-bottom: 1.5rem; color: var(--text-primary);">Smart Software for <br class="desktop-only"><span style="background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-dark) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Every Business</span></h1>
+        <p class="hero-description" style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px; line-height: 1.6;">
+          Akosnow develops secure, scalable, and modern business software solutions tailored to streamline operations, automate workflows, and accelerate growth.
+        </p>
+        
+        <!-- Hero Value Badges (Replacing the redundant CTA buttons) -->
+        <div class="hero-value-badges" style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.95rem; color: var(--text-primary); font-weight: 500;">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="color: var(--brand-primary); font-weight: 800; font-size: 1.25rem;">✓</span>
+            <span><strong>Secure & Offline-First:</strong> Keep operating even during ISP outages</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="color: var(--brand-primary); font-weight: 800; font-size: 1.25rem;">✓</span>
+            <span><strong>Direct Developer Support:</strong> Bypass queues and talk directly to engineers</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="color: var(--brand-primary); font-weight: 800; font-size: 1.25rem;">✓</span>
+            <span><strong>Fully Customizable:</strong> Modular architectures tailored to your workflow</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="contact-form-container hero-lead-form schematic-card" style="width: 100%; max-width: 440px; margin: 0 auto; background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-top: 4px solid var(--brand-primary); padding: 2.25rem 2rem; border-radius: 0.5rem; box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.4);">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <h3 style="margin-top: 0; margin-bottom: 0.4rem; font-size: 1.35rem; font-weight: 700; color: var(--text-primary); font-family: 'Outfit', sans-serif;">Request a Free Demo</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.4;">Fill out your details below and a systems consultant will reach out to you.</p>
+          
+          <form class="demo-form" id="heroDemoForm" novalidate style="display: flex; flex-direction: column; gap: 1rem;">
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0;">
+              <label for="heroFullName" style="font-size: 0.8rem; font-weight: 600; color: var(--text-primary);">Full Name <span class="required">*</span></label>
+              <input type="text" id="heroFullName" placeholder="Enter your name" required>
+              <span class="error-msg" id="heroFullNameError">Full name is required.</span>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0;">
+              <label for="heroCompanyName" style="font-size: 0.8rem; font-weight: 600; color: var(--text-primary);">Company Name <span class="required">*</span></label>
+              <input type="text" id="heroCompanyName" placeholder="Enter your company name" required>
+              <span class="error-msg" id="heroCompanyNameError">Company name is required.</span>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0;">
+              <label for="heroEmail" style="font-size: 0.8rem; font-weight: 600; color: var(--text-primary);">Email Address <span class="required">*</span></label>
+              <input type="email" id="heroEmail" placeholder="you@company.com" required>
+              <span class="error-msg" id="heroEmailError">Please enter a valid company email.</span>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0;">
+              <label for="heroPhone" style="font-size: 0.8rem; font-weight: 600; color: var(--text-primary);">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="heroPhone" placeholder="+91 98765 43210" required>
+              <span class="error-msg" id="heroPhoneError">Valid phone number is required.</span>
+            </div>
+
+            <div class="form-group" style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0;">
+              <label for="heroProduct" style="font-size: 0.8rem; font-weight: 600; color: var(--text-primary);">Product of Interest <span class="required">*</span></label>
+              <select id="heroProduct" required style="width: 100%;">
+                <option value="" disabled selected>Select a product...</option>
+                <option value="Akosnow Billing & POS">Akosnow Billing & POS</option>
+                <option value="Akosnow CRM">Akosnow CRM</option>
+                <option value="Akosnow MSGE">Akosnow MSGE</option>
+                <option value="Akosnow Clinic">Akosnow Clinic</option>
+                <option value="Akosnow Pharmacy">Akosnow Pharmacy</option>
+                <option value="Akosnow Restaurant">Akosnow Restaurant</option>
+                <option value="Akosnow Hotel">Akosnow Hotel</option>
+                <option value="Akosnow Garage">Akosnow Garage</option>
+                <option value="Akosnow School">Akosnow School</option>
+                <option value="Akosnow Community">Akosnow Community</option>
+                <option value="QSecureX">QSecureX</option>
+                <option value="Custom Software">Custom Software Development</option>
+              </select>
+              <span class="error-msg" id="heroProductError">Please select a product.</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" style="padding: 0.85rem; font-weight: 700; margin-top: 0.5rem;">Request Free Demo</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Are Section -->
+  <section class="who-we-are-section" style="padding: 5rem 0; background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container" style="max-width: 850px; text-align: center;">
+      <span class="section-title-helper">Who We Are</span>
+      <h2 class="section-title" style="margin-top: 0.5rem; margin-bottom: 1.5rem;">Indian Software Company Building Modern Business Systems</h2>
+      <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 3rem;">
+        Akosnow is an Indian software company building modern business applications that simplify operations across retail, healthcare, hospitality, education, communities, and enterprise businesses. Our focus is delivering secure, scalable, and customizable software that adapts to each customer's workflow.
+      </p>
+      
+      <!-- Trusted by Businesses Indicators -->
+      <div>
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 1.5rem;">Serving Diverse Business Sectors</span>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; opacity: 0.8;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">
+            <span style="font-size: 1.35rem;">🛍️</span> Retail & Commerce
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">
+            <span style="font-size: 1.35rem;">🩺</span> Healthcare & Labs
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">
+            <span style="font-size: 1.35rem;">🍽️</span> Restaurants & Cafés
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">
+            <span style="font-size: 1.35rem;">🏫</span> Schools & Academies
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">
+            <span style="font-size: 1.35rem;">💼</span> Enterprise & SMEs
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted Section / Trust Badges -->
+  <section class="trusted-section">
+    <div class="container">
+      <span class="section-title-helper centered" style="display: block; text-align: center;">Our Principles</span>
+      <h2 class="section-title centered" style="margin-bottom: 0.75rem;">Why Businesses Trust Akosnow</h2>
+      <p class="section-subtitle centered" style="margin-bottom: 3rem;">We design and build secure, scalable, and customizable software around your exact goals.</p>
+      
+      <div class="trust-badges-grid">
+        <div class="trust-card">
+          <div class="trust-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+          </div>
+          <h3>Offline First</h3>
+          <p>Work uninterrupted with 100% database speed offline. Changes sync automatically once signals return.</p>
+        </div>
+        
+        <div class="trust-card">
+          <div class="trust-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <h3>Fast Deployment</h3>
+          <p>Get up and running rapidly with personalized onboarding, barcode integrations, and data imports.</p>
+        </div>
+        
+        <div class="trust-card">
+          <div class="trust-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <h3>Direct Developer Support</h3>
+          <p>Connect directly with the development engineers who build and maintain your business software.</p>
+        </div>
+        
+        <div class="trust-card">
+          <div class="trust-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <h3>Affordable Pricing</h3>
+          <p>Flexible and cost-effective licensing scale tiers constructed to support business growth budget limits.</p>
+        </div>
+        
+        <div class="trust-card">
+          <div class="trust-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+          </div>
+          <h3>Business Customization</h3>
+          <p>Features tailored around your exact operational pipelines, workflows, and custom reporting styles.</p>
+        </div>
+        
+        <div class="trust-card">
+          <div class="trust-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3>Secure Architecture</h3>
+          <p>AES-256 local database locks, strict client roles control, and offline encryption by design safeguard inputs.</p>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          </div>
+          <h3>Cross Platform</h3>
+          <p>Run systems smoothly across browsers, Windows desktops, macOS, Linux, and mobile iOS/Android layouts.</p>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+          </div>
+          <h3>Continuous Updates</h3>
+          <p>Receive regular product updates, active patches, and technical feature modifications at no extra cost.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <span class="stat-number" data-target="12">0</span>
+        <span class="stat-label">Business Software Products</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-target="13">0</span>
+        <span class="stat-label">Industries Supported</span>
+      </div>
+      <div class="stat-card">
+        <div style="display: inline-flex; justify-content: center; align-items: baseline; gap: 0.1rem; margin: 0 auto;">
+          <span class="stat-number" data-target="3">0</span>
+          <span style="font-family: 'Outfit', sans-serif; font-size: 3.5rem; font-weight: 800; color: var(--brand-primary); line-height: 1;">+</span>
+        </div>
+        <span class="stat-label">Years of Software Development</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-target="100">0</span>
+        <span class="stat-label">% Continuous Improvements</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Ecosystem Section -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <h2 class="section-title centered">Akosnow Product Ecosystem</h2>
+      <p class="section-subtitle centered">A comprehensive ecosystem of business applications tailored to scale operations.</p>
+      
+      <!-- Search & Filters Container -->
+      <div class="product-filters-container">
+        <div class="search-wrapper">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="productSearch" placeholder="Search products, features, or industries..." aria-label="Search products">
+        </div>
+        
+        <div class="filters-tabs" role="tablist">
+          <button class="filter-tab active" role="tab" aria-selected="true" data-category="all">All Solutions</button>
+          <button class="filter-tab" role="tab" aria-selected="false" data-category="business">Business Operations</button>
+          <button class="filter-tab" role="tab" aria-selected="false" data-category="healthcare">Healthcare</button>
+          <button class="filter-tab" role="tab" aria-selected="false" data-category="hospitality">Hospitality</button>
+          <button class="filter-tab" role="tab" aria-selected="false" data-category="automotive">Automotive</button>
+          <button class="filter-tab" role="tab" aria-selected="false" data-category="education">Education</button>
+          <button class="filter-tab" role="tab" aria-selected="false" data-category="community">Community</button>
+          <button class="filter-tab" role="tab" aria-selected="false" data-category="security">Security</button>
+          <button class="filter-tab" role="tab" aria-selected="false" data-category="enterprise">Enterprise</button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Products list dynamically loaded/filtered in JS, but server side rendered for SEO -->
+        
+        <!-- Akosnow Billing & POS -->
+        <div class="product-card" data-categories="business" data-name="akosnow billing pos retail inventory gst offline barcode">
+          <div class="product-card-header">
+            <img class="product-icon-img" src="icons/logo.png" alt="Akosnow Billing & POS Logo" loading="lazy">
+            <span class="cat-badge">Business Operations</span>
+          </div>
+          <h3>Akosnow Billing & POS</h3>
+          <p>Complete billing, inventory & business management software for retail stores, supermarkets and wholesalers.</p>
+          <div class="product-card-footer">
+            <button class="btn btn-link btn-learn-more" data-product="billing">Learn More &rarr;</button>
+            <button class="btn btn-outline btn-small btn-request-demo" data-product="Akosnow Billing & POS">Request Demo</button>
+          </div>
+        </div>
+
+        <!-- Akosnow CRM -->
+        <div class="product-card" data-categories="business" data-name="akosnow crm customer relationship lead sales quotations pipeline">
+          <div class="product-card-header">
+            <img class="product-icon-img" src="icons/crm.png" alt="Akosnow CRM Logo" loading="lazy">
+            <span class="cat-badge">Business Operations</span>
+          </div>
+          <h3>Akosnow CRM</h3>
+          <p>Manage customer relationships, lead tracking, sales pipelines, quotations, and after-sales support.</p>
+          <div class="product-card-footer">
+            <button class="btn btn-link btn-learn-more" data-product="crm">Learn More &rarr;</button>
+            <button class="btn btn-outline btn-small btn-request-demo" data-product="Akosnow CRM">Request Demo</button>
+          </div>
+        </div>
+
+        <!-- MSGE by Akosnow -->
+        <div class="product-card" data-categories="business" data-name="msge secure business communication messaging team alerts chat by akosnow">
+          <div class="product-card-header">
+            <img class="product-icon-img" src="icons/logo copy.png" alt="MSGE Logo" loading="lazy">
+            <span class="cat-badge">Business Operations</span>
+          </div>
+          <h3>MSGE</h3>
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; margin-top: -0.5rem; display: block; margin-bottom: 0.75rem;">by Akosnow</span>
+          <p>A unified business inbox and notification platform to receive real-time website leads, CRM updates, and operational alerts.</p>
+          <div class="product-card-footer">
+            <button class="btn btn-link btn-learn-more" data-product="msge">Learn More &rarr;</button>
+            <button class="btn btn-outline btn-small btn-request-demo" data-product="MSGE by Akosnow">Request Demo</button>
+          </div>
+        </div>
+
+        <!-- Akosnow Clinic -->
+        <div class="product-card" data-categories="healthcare" data-name="akosnow clinic healthcare management medical appointment patient emr prescription">
+          <div class="product-card-header">
+            <img class="product-icon-img" src="icons/clinic.png" alt="Akosnow Clinic Logo" loading="lazy">
+            <span class="cat-badge">Healthcare</span>
+          </div>
+          <h3>Akosnow Clinic</h3>
+          <p>Complete clinic and patient management platform including appointment schedules, EMR, and digital prescriptions.</p>
+          <div class="product-card-footer">
+            <button class="btn btn-link btn-learn-more" data-product="clinic">Learn More &rarr;</button>
+            <button class="btn btn-outline btn-small btn-request-demo" data-product="Akosnow Clinic">Request Demo</button>
+          </div>
+        </div>
+
+        <!-- Akosnow Pharmacy -->
+        <div class="product-card" data-categories="healthcare" data-name="akosnow pharmacy medicine inventory barcode expiry batch billing">
+          <div class="product-card-header">
+            <img class="product-icon-img" src="icons/pharmacy-icon.png" alt="Akosnow Pharmacy Logo" loading="lazy">
+            <span class="cat-badge">Healthcare</span>
+          </div>
+          <h3>Akosnow Pharmacy</h3>
+          <p>Complete pharmacy operations manager covering inventory, batch tracking, expiry alerts, and integrated billing.</p>
+          <div class="product-card-footer">
+            <button class="btn btn-link btn-learn-more" data-product="pharmacy">Learn More &rarr;</button>
+            <button class="btn btn-outline btn-small btn-request-demo" data-product="Akosnow Pharmacy">Request Demo</button>
+          </div>
+        </div>
+
+        <!-- Akosnow Restaurant -->
+        <div class="product-card" data-categories="hospitality" data-name="akosnow restaurant pos table kitchen kot waiter menu online orders">
+          <div class="product-card-header">
+            <img class="product-icon-img" src="icons/restaurant_icon.png" alt="Akosnow Restaurant Logo" loading="lazy">
+            <span class="cat-badge">Hospitality</span>
+          </div>
+          <h3>Akosnow Restaurant</h3>
+          <p>Fine-dining and fast-food POS system featuring Kitchen Order Tickets (KOT), table mappings, and waiter apps.</p>
+          <div class="product-card-footer">
+            <button class="btn btn-link btn-learn-more" data-product="restaurant">Learn More &rarr;</button>
+            <button class="btn btn-outline btn-small btn-request-demo" data-product="Akosnow Restaurant">Request Demo</button>
+          </div>
+        </div>
+
+        <!-- Akosnow Hotel -->
+        <div class="product-card" data-categories="hospitality" data-name="akosnow hotel room reservation front desk checkin checkout housekeeping">
+          <div class="product-card-header">
+            <img class="product-icon-img" src="icons/hotel-icon.png" alt="Akosnow Hotel Logo" loading="lazy">
+            <span class="cat-badge">Hospitality</span>
+          </div>
+          <h3>Akosnow Hotel</h3>
+          <p>Property management system (PMS) covering room bookings, front desk guest check-in/out, and housekeeping status.</p>
+          <div class="product-card-footer">
+            <button class="btn btn-link btn-learn-more" data-product="hotel">Learn More &rarr;</button>
+            <button class="btn btn-outline btn-small btn-request-demo" data-product="Akosnow Hotel">Request Demo</button>
+          </div>
+        </div>
+
+        <!-- Akosnow Garage -->
+        <div class="product-card" data-categories="automotive" data-name="akosnow garage workshop car service vehicle history job cards invoices spares">
+          <div class="product-card-header">
+            <img class="product-icon-img" src="icons/garage-icon.png" alt="Akosnow Garage Logo" loading="lazy">
+            <span class="cat-badge">Automotive</span>
+          </div>
+          <h3>Akosnow Garage</h3>
+          <p>Automobile workshop tool to log job cards, track vehicle history, assign technicians, and bill spare parts.</p>
+          <div class="product-card-footer">
+            <button class="btn btn-link btn-learn-more" data-product="garage">Learn More &rarr;</button>
+            <button class="btn btn-outline btn-small btn-request-demo" data-product="Akosnow Garage">Request Demo</button>
+          </div>
+        </div>
+
+        <!-- Akosnow School -->
+        <div class="product-card" data-categories="education" data-name="akosnow school student admission records attendance fees report cards">
+          <div class="product-card-header">
+            <img class="product-icon-img" src="icons/school.png" alt="Akosnow School Logo" loading="lazy">
+            <span class="cat-badge">Education</span>
+          </div>
+          <h3>Akosnow School</h3>
+          <p>Administrative platform to maintain student admission profiles, track fee collection, and generate report cards.</p>
+          <div class="product-card-footer">
+            <button class="btn btn-link btn-learn-more" data-product="school">Learn More &rarr;</button>
+            <button class="btn btn-outline btn-small btn-request-demo" data-product="Akosnow School">Request Demo</button>
+          </div>
+        </div>
+
+        <!-- Akosnow Community -->
+        <div class="product-card" data-categories="community" data-name="akosnow community membership records financial event announcements admin">
+          <div class="product-card-header">
+            <img class="product-icon-img" src="icons/cum-icon.png" alt="Akosnow Community Logo" loading="lazy">
+            <span class="cat-badge">Community</span>
+          </div>
+          <h3>Akosnow Community</h3>
+          <p>Membership logs, events coordinators, announcements panels, and dues tracking built for associations and clubs.</p>
+          <div class="product-card-footer">
+            <button class="btn btn-link btn-learn-more" data-product="community">Learn More &rarr;</button>
+            <button class="btn btn-outline btn-small btn-request-demo" data-product="Akosnow Community">Request Demo</button>
+          </div>
+        </div>
+
+        <!-- QSecureX -->
+        <div class="product-card" data-categories="security" data-name="qsecurex privacy cybersecurity aes-256 password vault offline files encryption">
+          <div class="product-card-header">
+            <img class="product-icon-img" src="icons/favicon.png" alt="QSecureX Logo" loading="lazy">
+            <span class="cat-badge">Security</span>
+          </div>
+          <h3>QSecureX</h3>
+          <p>Zero-knowledge, offline-first cryptographic vault. Features AES-256 local encryption, local note security, privacy by design, and local storage with no mandatory cloud syncing.</p>
+          <div class="product-card-footer">
+            <button class="btn btn-link btn-learn-more" data-product="qsecurex">Learn More &rarr;</button>
+            <button class="btn btn-outline btn-small btn-request-demo" data-product="QSecureX">Request Demo</button>
+          </div>
+        </div>
+
+        <!-- Custom Software Development -->
+        <div class="product-card" data-categories="enterprise" data-name="custom software development enterprise applications erp crm cloud dashboards integrations">
+          <div class="product-card-header">
+            <img class="product-icon-img" src="icons/logo2.png" alt="Custom Development Logo" loading="lazy">
+            <span class="cat-badge">Enterprise</span>
+          </div>
+          <h3>Custom Development</h3>
+          <p>Bespoke software tailored around your organization's workflow—automating systems, dashboard reports, and APIs.</p>
+          <div class="product-card-footer">
+            <button class="btn btn-link btn-learn-more" data-product="custom">Learn More &rarr;</button>
+            <button class="btn btn-outline btn-small btn-request-demo" data-product="Custom Software">Request Demo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Comparison Table -->
+  <section class="comparison-section">
+    <div class="container">
+      <h2 class="section-title centered">Interactive Product Comparison</h2>
+      <p class="section-subtitle centered">Compare core capabilities of our main product offerings side-by-side.</p>
+      
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature Capacity</th>
+              <th>Billing & POS</th>
+              <th>Akosnow CRM</th>
+              <th>Clinic System</th>
+              <th>QSecureX</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Offline Operation Mode</td>
+              <td class="supported">✔️ Full (Local DB)</td>
+              <td class="supported">✔️ Offline Drafts</td>
+              <td class="supported">✔️ Emergency Read</td>
+              <td class="supported">✔️ 100% Offline Vault</td>
+            </tr>
+            <tr>
+              <td>Automatic Cloud Sync</td>
+              <td class="supported">✔️ Yes (Real-time)</td>
+              <td class="supported">✔️ Yes (Real-time)</td>
+              <td class="supported">✔️ Yes (Secure SSL)</td>
+              <td class="not-supported">❌ Local Only (Zero Trust)</td>
+            </tr>
+            <tr>
+              <td>Hardware Integration</td>
+              <td class="supported">✔️ Thermal Prn, Barcode</td>
+              <td class="not-supported">❌ None Required</td>
+              <td class="supported">✔️ Scanner Support</td>
+              <td class="not-supported">❌ None</td>
+            </tr>
+            <tr>
+              <td>Data Security</td>
+              <td class="supported">🔒 Encrypted Backups</td>
+              <td class="supported">🔒 Row Access Control</td>
+              <td class="supported">🔒 Encrypted Patient Records</td>
+              <td class="supported">🔒 AES-256 E2E</td>
+            </tr>
+            <tr>
+              <td>Developer API Access</td>
+              <td class="supported">✔️ REST API Hooks</td>
+              <td class="supported">✔️ REST API Hooks</td>
+              <td class="supported">✔️ HL7 / FHIR Ready</td>
+              <td class="not-supported">❌ No (Encrypted)</td>
+            </tr>
+            <tr>
+              <td>GST & Tax Compliant</td>
+              <td class="supported">✔️ Ready (Multi-Tax)</td>
+              <td class="supported">✔️ Invoice Estimates</td>
+              <td class="supported">✔️ Medical Billing</td>
+              <td class="not-supported">❌ N/A</td>
+            </tr>
+            <tr>
+              <td>Custom Branding</td>
+              <td class="supported">✔️ Custom Branding Available</td>
+              <td class="supported">✔️ Custom Branding Available</td>
+              <td class="supported">✔️ Custom Branding Available</td>
+              <td class="not-supported">❌ N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Section -->
+  <section class="solutions-section" id="solutions">
+    <div class="container">
+      <h2 class="section-title centered">Tailored Solutions for Your Scale</h2>
+      <p class="section-subtitle centered">We group software tools specifically configured for business categories.</p>
+      
+      <div class="solutions-grid">
+        <div class="solution-card">
+          <span class="solution-num">01</span>
+          <h3>Retail & Commerce</h3>
+          <p>Complete POS integration, inventory alerts, multi-branch updates, barcode generators, and automated GST billing layouts.</p>
+          <a href="#products" class="solution-link">Explore Retail Suite &rarr;</a>
+        </div>
+        <div class="solution-card">
+          <span class="solution-num">02</span>
+          <h3>Healthcare Systems</h3>
+          <p>Integrated EMR databases, secure prescription transfers, appointment books, and medicine batch trackers.</p>
+          <a href="#products" class="solution-link">Explore Medical Suite &rarr;</a>
+        </div>
+        <div class="solution-card">
+          <span class="solution-num">03</span>
+          <h3>Hospitality Operations</h3>
+          <p>Table layout coordinators, real-time Kitchen Order Tickets, room availability maps, and rapid checkout bills.</p>
+          <a href="#products" class="solution-link">Explore Hospitality Suite &rarr;</a>
+        </div>
+        <div class="solution-card">
+          <span class="solution-num">04</span>
+          <h3>Automotive Workshops</h3>
+          <p>Job card logs, service status SMS, technician tasks schedules, and spare parts inventory calculators.</p>
+          <a href="#products" class="solution-link">Explore Auto Suite &rarr;</a>
+        </div>
+        <div class="solution-card">
+          <span class="solution-num">05</span>
+          <h3>Educational Facilities</h3>
+          <p>Class directories, fee receipts databases, automated schedules, and progress reports cards generators.</p>
+          <a href="#products" class="solution-link">Explore School Suite &rarr;</a>
+        </div>
+        <div class="solution-card">
+          <span class="solution-num">06</span>
+          <h3>Community Platforms</h3>
+          <p>Clubs roster trackers, automated alerts boards, financial audits logging, and event RSVP sheets.</p>
+          <a href="#products" class="solution-link">Explore Comm Suite &rarr;</a>
+        </div>
+        <div class="solution-card">
+          <span class="solution-num">07</span>
+          <h3>Enterprise Systems</h3>
+          <p>Highly customized software logic, API linkages, corporate dashboards reports, and database migrations.</p>
+          <a href="#products" class="solution-link">Explore Custom Code &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries Section -->
+  <section class="industries-section dot-grid-bg" id="industries">
+    <div class="container">
+      <h2 class="section-title centered">Industries We Serve</h2>
+      <p class="section-subtitle centered">Purpose-built structures supporting businesses across vertical sectors.</p>
+      
+      <div class="industries-grid">
+        <div class="industry-card schematic-card" onclick="triggerIndustryPopup('Retail Store')">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <div>
+            <div class="ind-icon-wrapper">🛍️</div>
+            <div class="industry-card-content">
+              <h4>Retail</h4>
+              <p>Optimize checkout alerts, POS logging, and real-time inventory chimes instantly.</p>
+            </div>
+          </div>
+          <div class="industry-card-footer">
+            <span>Try MSGE Alert</span>
+            <span style="font-size: 0.95rem;">→</span>
+          </div>
+        </div>
+        <div class="industry-card schematic-card" onclick="triggerIndustryPopup('Restaurant')">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <div>
+            <div class="ind-icon-wrapper">🍽️</div>
+            <div class="industry-card-content">
+              <h4>Restaurants</h4>
+              <p>Automate kitchen ticket routing, table alerts, and online order dispatches.</p>
+            </div>
+          </div>
+          <div class="industry-card-footer">
+            <span>Try MSGE Alert</span>
+            <span style="font-size: 0.95rem;">→</span>
+          </div>
+        </div>
+        <div class="industry-card schematic-card" onclick="triggerIndustryPopup('Hotel')">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <div>
+            <div class="ind-icon-wrapper">🏨</div>
+            <div class="industry-card-content">
+              <h4>Hotels</h4>
+              <p>Streamline front-desk notifications, room service dispatches, and guest bookings.</p>
+            </div>
+          </div>
+          <div class="industry-card-footer">
+            <span>Try MSGE Alert</span>
+            <span style="font-size: 0.95rem;">→</span>
+          </div>
+        </div>
+        <div class="industry-card schematic-card" onclick="triggerIndustryPopup('School')">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <div>
+            <div class="ind-icon-wrapper">🏫</div>
+            <div class="industry-card-content">
+              <h4>Schools</h4>
+              <p>Manage administrative announcements, student logs, and attendance alerts.</p>
+            </div>
+          </div>
+          <div class="industry-card-footer">
+            <span>Try MSGE Alert</span>
+            <span style="font-size: 0.95rem;">→</span>
+          </div>
+        </div>
+        <div class="industry-card schematic-card" onclick="triggerIndustryPopup('Clinic')">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <div>
+            <div class="ind-icon-wrapper">🩺</div>
+            <div class="industry-card-content">
+              <h4>Clinics</h4>
+              <p>Secure patient check-in notifications, appointment updates, and staff logs.</p>
+            </div>
+          </div>
+          <div class="industry-card-footer">
+            <span>Try MSGE Alert</span>
+            <span style="font-size: 0.95rem;">→</span>
+          </div>
+        </div>
+        <div class="industry-card schematic-card" onclick="triggerIndustryPopup('Pharmacy')">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <div>
+            <div class="ind-icon-wrapper">💊</div>
+            <div class="industry-card-content">
+              <h4>Pharmacies</h4>
+              <p>Track prescription dispatches, inventory drop warnings, and billing alerts.</p>
+            </div>
+          </div>
+          <div class="industry-card-footer">
+            <span>Try MSGE Alert</span>
+            <span style="font-size: 0.95rem;">→</span>
+          </div>
+        </div>
+        <div class="industry-card schematic-card" onclick="triggerIndustryPopup('Garage')">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <div>
+            <div class="ind-icon-wrapper">🔧</div>
+            <div class="industry-card-content">
+              <h4>Garages</h4>
+              <p>Coordinate service status chimes, vehicle delivery alerts, and billing completions.</p>
+            </div>
+          </div>
+          <div class="industry-card-footer">
+            <span>Try MSGE Alert</span>
+            <span style="font-size: 0.95rem;">→</span>
+          </div>
+        </div>
+        <div class="industry-card schematic-card" onclick="triggerIndustryPopup('Manufacturing')">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <div>
+            <div class="ind-icon-wrapper">🏭</div>
+            <div class="industry-card-content">
+              <h4>Manufacturing</h4>
+              <p>Sync production floor telemetry, system errors, and supply chain updates.</p>
+            </div>
+          </div>
+          <div class="industry-card-footer">
+            <span>Try MSGE Alert</span>
+            <span style="font-size: 0.95rem;">→</span>
+          </div>
+        </div>
+        <div class="industry-card schematic-card" onclick="triggerIndustryPopup('Wholesale')">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <div>
+            <div class="ind-icon-wrapper">📦</div>
+            <div class="industry-card-content">
+              <h4>Wholesale</h4>
+              <p>Manage bulk dispatch triggers, logistics updates, and partner invoice completions.</p>
+            </div>
+          </div>
+          <div class="industry-card-footer">
+            <span>Try MSGE Alert</span>
+            <span style="font-size: 0.95rem;">→</span>
+          </div>
+        </div>
+        <div class="industry-card schematic-card" onclick="triggerIndustryPopup('Electronics')">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <div>
+            <div class="ind-icon-wrapper">💻</div>
+            <div class="industry-card-content">
+              <h4>Electronics</h4>
+              <p>Monitor device telemetry, server alerts, and system health status chimes.</p>
+            </div>
+          </div>
+          <div class="industry-card-footer">
+            <span>Try MSGE Alert</span>
+            <span style="font-size: 0.95rem;">→</span>
+          </div>
+        </div>
+        <div class="industry-card schematic-card" onclick="triggerIndustryPopup('Community')">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <div>
+            <div class="ind-icon-wrapper">👥</div>
+            <div class="industry-card-content">
+              <h4>Communities</h4>
+              <p>Manage member notifications, operational updates, and volunteer dispatch requests.</p>
+            </div>
+          </div>
+          <div class="industry-card-footer">
+            <span>Try MSGE Alert</span>
+            <span style="font-size: 0.95rem;">→</span>
+          </div>
+        </div>
+        <div class="industry-card schematic-card" onclick="triggerIndustryPopup('SME Business')">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <div>
+            <div class="ind-icon-wrapper">💼</div>
+            <div class="industry-card-content">
+              <h4>SMEs</h4>
+              <p>Unify CRM logs, website form submissions, and sales alerts in one dashboard.</p>
+            </div>
+          </div>
+          <div class="industry-card-footer">
+            <span>Try MSGE Alert</span>
+            <span style="font-size: 0.95rem;">→</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <h2 class="section-title centered">Professional Services</h2>
+      <p class="section-subtitle centered">From consultancy to custom deployment, we support your digital transformation.</p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Custom Software</h3>
+          <p>Full-cycle software engineering focused on solving unique operations processes.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Mobile App Dev</h3>
+          <p>Native & cross-platform smartphone client tools for staff & customer loyalty.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3>Web App Development</h3>
+          <p>Dynamic cloud platforms, admin portals, and external SaaS infrastructures.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🖥️</div>
+          <h3>Desktop Software</h3>
+          <p>High-speed, heavy-operation local applications for Windows, macOS, or Linux.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Business Automation</h3>
+          <p>Connecting software workflows to remove redundant manual file entries.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔌</div>
+          <h3>API Integration</h3>
+          <p>Creating bridges between your custom tools and existing payment or CRM software.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">☁️</div>
+          <h3>Cloud Solutions</h3>
+          <p>Scalable cloud databases hosting configurations, backups, and secure routing.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🧠</div>
+          <h3>Technical Consulting</h3>
+          <p>Technical evaluation to optimize software stack spend and software workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Section -->
+  <section class="why-choose-section" id="why-choose">
+    <div class="container">
+      <h2 class="section-title centered">Why Choose Akosnow</h2>
+      <p class="section-subtitle centered">What sets our software apart from generic business solutions.</p>
+      
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🔒</div>
+          <h3>Secure Architecture</h3>
+          <p>Local-first encrypted databases, secure cloud routing, and fine-grained data roles protect your information.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🚀</div>
+          <h3>Modern Technology</h3>
+          <p>Leveraging high-performance frameworks that guarantee fast rendering speeds and solid reliability.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📈</div>
+          <h3>Scalable Solutions</h3>
+          <p>From single local workshops to multi-location networks, our solutions grow smoothly alongside you.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">☁️</div>
+          <h3>Offline + Cloud Support</h3>
+          <p>Work offline with 100% database speed. The system auto-syncs to cloud once web signals return.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📞</div>
+          <h3>Dedicated Support</h3>
+          <p>Get in touch with engineering experts directly—no waiting for complex, third-party ticketing lines.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🎯</div>
+          <h3>Tailored Business Software</h3>
+          <p>Custom setups matching specific industries workflows out of the box, not empty general databases templates.</p>
+        </div>
+      </div>
+
+      <!-- Strategic Advantage Comparison Table -->
+      <div class="comparison-table-wrapper" style="margin-top: 4rem;">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Strategic Advantage</th>
+              <th>Typical Enterprise Software</th>
+              <th>Akosnow Advantage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight: 600; color: var(--text-primary);">Customization</td>
+              <td>Standardized features with limited customization options</td>
+              <td class="supported">✔️ Tailored customization to match your business workflows</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600; color: var(--text-primary);">Feature Delivery</td>
+              <td>Updates follow vendor release schedules</td>
+              <td class="supported">✔️ Faster implementation of requested features and custom enhancements</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600; color: var(--text-primary);">Customer Support</td>
+              <td>Multi-level ticketing and support channels</td>
+              <td class="supported">✔️ Direct communication with the development team</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600; color: var(--text-primary);">Pricing</td>
+              <td>Often based on recurring subscriptions and user licenses</td>
+              <td class="supported">✔️ Flexible and cost-effective pricing for businesses of different sizes</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600; color: var(--text-primary);">Deployment Options</td>
+              <td>Frequently cloud-first or cloud-only</td>
+              <td class="supported">✔️ Offline-first with optional cloud synchronization</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600; color: var(--text-primary);">Data Ownership</td>
+              <td>Data is commonly stored in vendor-managed cloud services</td>
+              <td class="supported">✔️ Local data storage with optional cloud features</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600; color: var(--text-primary);">Implementation</td>
+              <td>May require lengthy onboarding and configuration</td>
+              <td class="supported">✔️ Quick deployment with personalized setup assistance</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600; color: var(--text-primary);">Business-Specific Features</td>
+              <td>Generic workflows designed for broad markets</td>
+              <td class="supported">✔️ Features customized for your industry's operational needs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Process Section (Horizontal Timeline) -->
+  <section class="process-section">
+    <div class="container">
+      <h2 class="section-title centered">Our Software Development Process</h2>
+      <p class="section-subtitle centered">How we build custom solutions from initial request to production support.</p>
+      
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="timeline-wrapper">
+          <div class="timeline-step">
+            <div class="timeline-number">1</div>
+            <h4>Discovery</h4>
+            <p>Initial meeting to identify operational pain points.</p>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-number">2</div>
+            <h4>Planning</h4>
+            <p>Drafting software parameters and feature checklists.</p>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-number">3</div>
+            <h4>UI/UX Design</h4>
+            <p>Creating interactive mockups for review.</p>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-number">4</div>
+            <h4>Development</h4>
+            <p>Writing scalable clean code matching blueprints.</p>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-number">5</div>
+            <h4>Testing</h4>
+            <p>Running user acceptance testing for validations.</p>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-number">6</div>
+            <h4>Deployment</h4>
+            <p>Launching application in client environment.</p>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-number">7</div>
+            <h4>Ongoing Support</h4>
+            <p>Maintenance, updates, and feature upgrades.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies / Success Stories -->
+  <section class="case-studies-section">
+    <div class="container">
+      <h2 class="section-title centered">Success Stories</h2>
+      <p class="section-subtitle centered">Real outcomes achieved by businesses using Akosnow applications.</p>
+      
+      <div class="case-studies-grid">
+        <div class="case-card">
+          <span class="case-label">Retail Operations</span>
+          <h3>Supermarket Operations Upgrade</h3>
+          <div class="case-body">
+            <p><strong>Challenge:</strong> Slow checkout speeds and inconsistent multi-register database syncing under load.</p>
+            <p><strong>Solution:</strong> Deployed Akosnow Billing & POS with local-first databases across three billing registers.</p>
+            <p><strong>Outcome:</strong> Reached continuous offline checkout stability and simplified end-of-day billing audits.</p>
+          </div>
+        </div>
+        
+        <div class="case-card">
+          <span class="case-label">Healthcare Operations</span>
+          <h3>Clinic Patient Scheduling Setup</h3>
+          <div class="case-body">
+            <p><strong>Challenge:</strong> Overbooked patient sessions and manual paper-based record archiving delays.</p>
+            <p><strong>Solution:</strong> Implementation of Akosnow Clinic with digital scheduling and cloud patient folders.</p>
+            <p><strong>Outcome:</strong> Reduced patient wait times and created secure, fast physician access to medical history profiles.</p>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <span class="case-label">Hospitality Management</span>
+          <h3>Boutique Hotel Check-in Workflow</h3>
+          <div class="case-body">
+            <p><strong>Challenge:</strong> Slow check-in operations during peak arrival hours and housekeeping sync issues.</p>
+            <p><strong>Solution:</strong> Rolled out Akosnow Hotel for integrated desk management and room housekeeping tracking.</p>
+            <p><strong>Outcome:</strong> Streamlined the check-in process and updated room occupancy metrics in real-time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Become a Partner Teaser Banner -->
+  <section class="partner-teaser-section" id="partner" style="padding: 4.5rem 0; background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); text-align: center;">
+    <div class="container" style="max-width: 750px;">
+      <span class="section-title-helper">Grow With Us</span>
+      <h2 class="section-title" style="margin-top: 0.5rem; margin-bottom: 0.75rem;">Join the Akosnow Channel Partner Program</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">Refer new customers or distribute our business software and earn competitive partner commissions.</p>
+      <a href="partner.html" class="btn btn-outline" style="text-decoration: none; font-weight: 600;">Learn About Our Partner Program &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FAQ Section (Accordion) -->
+  <section class="faq-section" id="faq">
+    <div class="container faq-container-inner">
+      <h2 class="section-title centered">Frequently Asked Questions</h2>
+      <p class="section-subtitle centered">Clear answers regarding configurations, pricing, and system architectures.</p>
+      
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Can Akosnow software be customized?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              <p>Yes. Every business has individual workflow rules. Akosnow applications are modular, allowing us to customize data logs, interfaces, checkout scripts, and invoices layouts to align with your business operations guidelines.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Does the software support GST?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              <p>Absolutely. Akosnow Billing & POS supports customizable GST configurations. It automates calculations for CGST, SGST, IGST, prints detailed tax invoices, and creates summary reports for monthly file preparations.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Can it work offline?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              <p>Yes, offline capability is a core pillar. Products like Akosnow Billing & POS, Pharmacy, and QSecureX operate locally using device databases, saving records instantly and auto-syncing back with your cloud space once connection resolves.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Is cloud hosting available?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              <p>Yes. We offer secure cloud hosting options. This allows real-time synchronizations between branches, automated database backups, remote dashboard reports, and multi-device access permissions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Do you provide installation and training?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              <p>Yes. Our onboarding covers local hardware configurations (thermal printers, barcode scanners, cash drawers), server setup, data migrations from Excel records, and full staff training sessions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>What support options are available?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              <p>We provide multiple support plans including email support, dedicated SLA telephone support lines, remote desktop diagnostics, and priority critical bug patching plans.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>How can I request a demo?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              <p>Simply scroll to our contact section below, fill out the Demo Request Form with your company details and product of interest, and our sales team will reach out within 24 hours to schedule a session.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Hub Section -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2 class="section-title">Ready to Transform Your Business?</h2>
+        <p class="contact-helper">Whether you need ready-to-use business software or a custom-built solution, Akosnow is here to help you achieve your goals through innovative technology.</p>
+        
+        <div class="contact-details">
+          <div class="detail-item">
+            <span class="detail-icon">📍</span>
+            <div>
+              <strong>Location</strong>
+              <p>Kollam, Kerala, India</p>
+            </div>
+          </div>
+          
+
+          <div class="detail-item">
+            <span class="detail-icon">⏰</span>
+            <div>
+              <strong>Business Hours</strong>
+              <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+              <p>Saturday: 10:00 AM - 2:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Map styled placeholder -->
+        <div class="map-placeholder">
+          <div class="map-inner">
+            <span>📍 Akosnow Headquarters Location Map</span>
+            <small>Kollam, Kerala, India</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo Request Form -->
+      <div class="contact-form-container">
+        <h3>Request a Product Demo</h3>
+        <p class="form-sub">Fill out the parameters below, and our systems consultant will contact you.</p>
+        
+        <form class="demo-form" id="demoForm" novalidate>
+          <div class="form-group">
+            <label for="fullName">Full Name <span class="required">*</span></label>
+            <input type="text" id="fullName" placeholder="Enter your full name" required>
+            <span class="error-msg" id="fullNameError">Full name is required.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="companyName">Company Name <span class="required">*</span></label>
+            <input type="text" id="companyName" placeholder="Enter your company name" required>
+            <span class="error-msg" id="companyNameError">Company name is required.</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="emailAddress">Email Address <span class="required">*</span></label>
+              <input type="email" id="emailAddress" placeholder="you@company.com" required>
+              <span class="error-msg" id="emailError">Please enter a valid company email.</span>
+            </div>
+            <div class="form-group">
+              <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phoneNumber" placeholder="+1 (555) 000-0000" required>
+              <span class="error-msg" id="phoneError">Valid phone number is required.</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="productInterest">Product of Interest <span class="required">*</span></label>
+            <select id="productInterest" required>
+              <option value="" disabled selected>Select a product...</option>
+              <option value="Akosnow Billing & POS">Akosnow Billing & POS</option>
+              <option value="Akosnow CRM">Akosnow CRM</option>
+              <option value="Akosnow MSGE">Akosnow MSGE</option>
+              <option value="Akosnow Clinic">Akosnow Clinic</option>
+              <option value="Akosnow Pharmacy">Akosnow Pharmacy</option>
+              <option value="Akosnow Restaurant">Akosnow Restaurant</option>
+              <option value="Akosnow Hotel">Akosnow Hotel</option>
+              <option value="Akosnow Garage">Akosnow Garage</option>
+              <option value="Akosnow School">Akosnow School</option>
+              <option value="Akosnow Community">Akosnow Community</option>
+              <option value="QSecureX">QSecureX</option>
+              <option value="Custom Software">Custom Software Development</option>
+              <option value="Partner Program">Join Partner Program</option>
+            </select>
+            <span class="error-msg" id="productError">Please select a product.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" rows="4" placeholder="How can we help your business? (Optional)"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Submit Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <!-- Info Column -->
+      <div class="footer-info-col">
+        <a href="#" class="footer-logo">
+          <img src="icons/logo2.png" alt="Akosnow Logo" style="width: 2rem; height: 2rem; object-fit: contain; vertical-align: middle;">
+          <span>Akosnow</span>
+        </a>
+        <p class="footer-desc" style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600;">
+          Akosnow Software
+        </p>
+        <p class="footer-desc" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.25rem;">
+          Akosnow develops secure, scalable, and business-focused software solutions that help organizations improve efficiency, automate operations, and accelerate digital transformation.
+        </p>
+        <p class="footer-tagline" style="font-weight: 700;">Smart Software. Smarter Business.</p>
+        <p class="footer-desc" style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic;">
+          Empowering businesses through trusted partnerships and innovative software solutions.
+        </p>
+        <p class="footer-copyright">&copy; 2026 Akosnow. All rights reserved.</p>
+      </div>
+
+      <!-- Links Column 1: Products -->
+      <div class="footer-links-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#products">Billing & POS</a></li>
+          <li><a href="#products">Akosnow CRM</a></li>
+          <li><a href="#products">Akosnow Clinic</a></li>
+          <li><a href="#products">Restaurant POS</a></li>
+          <li><a href="#products">Akosnow Garage</a></li>
+          <li><a href="#products">Akosnow Pharmacy</a></li>
+          <li><a href="#products">Akosnow Hotel</a></li>
+          <li><a href="#products">Akosnow School</a></li>
+          <li><a href="#products">Akosnow Community</a></li>
+          <li><a href="#products">Akosnow MSGE</a></li>
+          <li><a href="#products">QSecureX</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Solutions -->
+      <div class="footer-links-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#solutions">Retail & Commerce</a></li>
+          <li><a href="#solutions">Healthcare Systems</a></li>
+          <li><a href="#solutions">Hospitality Operations</a></li>
+          <li><a href="#solutions">Automotive Workshops</a></li>
+          <li><a href="#solutions">Educational Facilities</a></li>
+          <li><a href="#solutions">Community Platforms</a></li>
+          <li><a href="#solutions">Enterprise Systems</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3: Company & Resources -->
+      <div class="footer-links-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why-choose">About Us</a></li>
+          <li><a href="#partner">Partner Program</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+        <h4 style="margin-top: 1.5rem;">Resources</h4>
+        <ul>
+          <li><a href="developer.html">Documentation</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Support</a></li>
+          <li><a href="#">Product Updates</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 4: Follow Us -->
+      <div class="footer-links-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/company/akosnow" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/akosnow" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/akosnow" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="https://github.com/akosnow" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product Details Modal (Reusable focus-trapped modal markup) -->
+  <div class="product-modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      
+      <div class="modal-content-grid">
+        <div class="modal-left-col">
+          <div class="modal-header-info">
+            <div class="modal-product-icon" id="modalIcon"></div>
+            <span class="modal-cat-badge" id="modalCategory">Business Operations</span>
+          </div>
+          <h2 class="modal-product-title" id="modalTitle">Akosnow Billing & POS</h2>
+          <p class="modal-product-overview" id="modalOverview">Complete billing, inventory & business management software for retail stores, supermarkets, wholesalers, electronics, textiles, hardware stores, and service businesses.</p>
+          
+          <div class="modal-features-section">
+            <h4>Key Features</h4>
+            <ul class="modal-features-list" id="modalFeaturesList">
+              <!-- Dynamically populated in script.js -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="modal-right-col">
+          <div class="modal-info-block">
+            <strong>Target Industries</strong>
+            <p id="modalIndustries">Retail stores, Supermarkets, Wholesalers, Hardware, Electronics, Textiles.</p>
+          </div>
+
+          <div class="modal-info-block">
+            <strong>Supported Platforms</strong>
+            <div class="platform-chips" id="modalPlatforms">
+              <!-- Dynamically populated in script.js -->
+            </div>
+          </div>
+
+          <div class="modal-info-block">
+            <strong>Visual Interface Mockup</strong>
+            <div class="modal-screen-preview" id="modalScreenPreview">
+              <!-- A styled mockup illustrating the product screen inside the modal -->
+            </div>
+          </div>
+
+          <div class="modal-info-block">
+            <strong>Related Applications</strong>
+            <p id="modalRelated">Akosnow CRM, Akosnow MSGE</p>
+          </div>
+
+          <button class="btn btn-primary btn-full modal-cta-btn" id="modalCtaBtn">Request Demo &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lead Consultation Popup / Mobile Bottom Sheet -->
+  <div class="lead-popup-overlay" id="leadPopupOverlay" style="display: none;">
+    <div class="lead-popup-card" id="leadPopupCard">
+      <!-- Close Button -->
+      <button class="lead-popup-close" id="closeLeadPopup" aria-label="Close popup">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- MOBILE BOTTOM SHEET INITIAL VIEW (Hidden on Desktop via CSS) -->
+      <div class="mobile-sheet-initial" id="mobileSheetInitial">
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 1rem;">
+          <p style="margin: 0; font-weight: 700; font-size: 0.9rem; color: var(--text-primary);">Need help choosing software?</p>
+          <div style="display: flex; gap: 0.5rem;">
+            <button id="mobileRequestDemoBtn" class="btn btn-primary" style="padding: 0.45rem 0.8rem; font-size: 0.75rem; font-weight: 700; line-height: 1;">Request Demo</button>
+            <button id="mobileMsgeBtn" class="btn btn-msge" style="padding: 0.45rem 0.8rem; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 0.25rem; line-height: 1; border: none; border-radius: 0.35rem; color: white; cursor: pointer;">
+              MSGE Alert
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 1: Business Type Question -->
+      <div class="lead-popup-step" id="leadPopupStep1">
+        <h3 class="popup-title">Need Help Choosing the Right Software?</h3>
+        <p class="popup-subtitle">What type of business do you have?</p>
+        
+        <div class="lead-option-grid">
+          <button class="lead-opt-btn" data-business="Retail Store">
+            <span class="opt-icon">🛍️</span>
+            <span class="opt-label">Retail Store</span>
+          </button>
+          <button class="lead-opt-btn" data-business="Textile Shop">
+            <span class="opt-icon">🧵</span>
+            <span class="opt-label">Textile Shop</span>
+          </button>
+          <button class="lead-opt-btn" data-business="Restaurant">
+            <span class="opt-icon">🍽️</span>
+            <span class="opt-label">Restaurant</span>
+          </button>
+          <button class="lead-opt-btn" data-business="Clinic">
+            <span class="opt-icon">🩺</span>
+            <span class="opt-label">Clinic</span>
+          </button>
+          <button class="lead-opt-btn" data-business="Hotel">
+            <span class="opt-icon">🏨</span>
+            <span class="opt-label">Hotel</span>
+          </button>
+          <button class="lead-opt-btn" data-business="Pharmacy">
+            <span class="opt-icon">💊</span>
+            <span class="opt-label">Pharmacy</span>
+          </button>
+          <button class="lead-opt-btn" data-business="School">
+            <span class="opt-icon">🏫</span>
+            <span class="opt-label">School</span>
+          </button>
+          <button class="lead-opt-btn" data-business="Garage">
+            <span class="opt-icon">🔧</span>
+            <span class="opt-label">Garage</span>
+          </button>
+          <button class="lead-opt-btn" data-business="Other">
+            <span class="opt-icon">✨</span>
+            <span class="opt-label">Other</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Lead Form & WhatsApp Link -->
+      <div class="lead-popup-step" id="leadPopupStep2" style="display: none;">
+        <button class="popup-back-btn" id="backToStep1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back
+        </button>
+        
+        <h3 class="popup-title">Need Help Choosing the Right Software?</h3>
+        <p class="popup-subtitle" style="margin-bottom: 1rem;">Our experts can help you choose the best solution for your business.</p>
+        
+        <div class="popup-benefits" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.8rem; color: var(--text-primary); margin-bottom: 1.25rem; background-color: var(--bg-tertiary); padding: 0.75rem; border-radius: 0.5rem;">
+          <div>✓ Free Consultation</div>
+          <div>✓ Live Product Demo</div>
+          <div>✓ Custom Software Info</div>
+          <div>✓ Developer Support</div>
+        </div>
+
+        <form id="leadConsultationForm" novalidate style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <input type="hidden" id="leadSelectedBusiness" value="">
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <input type="email" id="leadPopupEmail" placeholder="Enter company email" required>
+            <span class="error-msg" id="leadPopupEmailError" style="font-size: 0.7rem; color: #EF4444; display: none; margin-top: 0.2rem;">Valid email is required.</span>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <input type="tel" id="leadPopupPhone" placeholder="Enter phone number" required>
+            <span class="error-msg" id="leadPopupPhoneError" style="font-size: 0.7rem; color: #EF4444; display: none; margin-top: 0.2rem;">Valid phone number is required.</span>
+          </div>
+
+          <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; width: 100%;">
+            <button type="submit" class="btn btn-primary" style="flex: 1; padding: 0.65rem; font-size: 0.85rem; font-weight: 700;">Request Demo</button>
+            <button type="button" id="leadPopupMsgeBtn" class="btn btn-msge" style="flex: 1; padding: 0.65rem; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 0.35rem; border: none; border-radius: 0.625rem; cursor: pointer; color: white;">
+              <span>💬</span> MSGE Alert
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- STEP 3: Success View -->
+      <div class="lead-popup-step" id="leadPopupStepSuccess" style="display: none;">
+        <div style="text-align: center; padding: 1.5rem 0.5rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; animation: fadeIn 0.4s ease-out;">
+          <div class="success-icon" style="background-color: var(--color-success-bg); color: var(--color-success); font-size: 2rem; width: 4rem; height: 4rem; border-radius: 9999px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 12px rgba(16, 185, 129, 0.15);">✓</div>
+          <h3 id="successPopupTitle" style="font-size: 1.35rem; color: var(--text-primary); margin: 0; font-family: 'Outfit', sans-serif;">Request Submitted</h3>
+          <p id="successPopupDesc" style="color: var(--text-secondary); line-height: 1.5; font-size: 0.85rem; margin: 0; max-width: 280px;"></p>
+          <button class="btn btn-outline" id="closeSuccessPopup" style="margin-top: 0.5rem; padding: 0.45rem 1rem; font-size: 0.8rem;">Close Window</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="script.js"></script>
+</body>
+</html>

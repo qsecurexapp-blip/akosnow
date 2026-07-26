@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akosnow & QSecureX | Developer Console, APIs & Business Software Integrations</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Connect business websites, forms, and custom web apps to Akosnow MSGE and QSecureX APIs using our REST API webhooks, Express proxies, and live sandbox console.">
+  <meta name="keywords" content="Akosnow, QSecureX, QSecure, Akosnow MSGE, developer API, B2B business software, webhooks, REST API console, software development, custom software integration">
+  <link rel="canonical" href="https://akosnow.com/developer.html">
+  
+  <!-- Page Favicon Logo -->
+  <link rel="icon" type="image/png" href="icons/logo2.png">
+  <link rel="apple-touch-icon" href="icons/logo2.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=2">
+
+  <!-- Theme Script (Inline to prevent Flash of Unstyled Theme) -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('akosnow-theme') || 'light';
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+      } else {
+        document.documentElement.classList.remove('dark-theme');
+      }
+    })();
+  </script>
+
+  <style>
+    /* Premium High-Tech Developer Guide Styling */
+    .dev-portal {
+      margin-top: 6rem;
+      min-height: 100vh;
+      color: var(--text-primary);
+    }
+
+    /* Hero Split Layout */
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      align-items: center;
+    }
+
+    .hero-info h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      background: linear-gradient(135deg, var(--brand-primary) 0%, #EA580C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-info p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    /* Interactive API Sandbox Card */
+    .sandbox-card {
+      position: relative;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow-md);
+      color: var(--text-secondary);
+    }
+
+    .sandbox-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sandbox-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+
+    .sandbox-input-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .sandbox-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .sandbox-field label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+    }
+
+    .sandbox-field input, .sandbox-field select {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.375rem;
+      padding: 0.65rem 0.85rem;
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      outline: none;
+      transition: all 0.2s;
+      width: 100%;
+      margin: 0;
+    }
+
+    .sandbox-field input:focus, .sandbox-field select:focus {
+      border-color: var(--brand-primary);
+      box-shadow: 0 0 8px rgba(249, 115, 22, 0.2);
+    }
+
+    .btn-sandbox-submit {
+      background: var(--brand-primary);
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.8rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.2s;
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-sandbox-submit:hover {
+      background: #ea580c;
+      transform: translateY(-1px);
+    }
+
+    .sandbox-response-terminal {
+      background: #0f0f17;
+      border: 1px solid var(--border-color);
+      border-radius: 0.375rem;
+      padding: 1.25rem;
+      margin-top: 1.25rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+      min-height: 110px;
+      max-height: 140px;
+      overflow-y: auto;
+      color: #34D399;
+      line-height: 1.4;
+    }
+
+    /* Roadmap Sections */
+    .docs-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .docs-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .docs-section h2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: var(--brand-primary);
+      margin: 0.75rem auto 0;
+      border-radius: 2px;
+    }
+
+    .docs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .docs-card {
+      position: relative;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 2.25rem;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+    }
+
+    .docs-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--brand-primary);
+    }
+
+    .card-step-badge {
+      background: rgba(249, 115, 22, 0.1);
+      color: var(--brand-primary);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 2rem;
+      display: inline-block;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .docs-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .docs-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* API Endpoint Box */
+    .api-endpoint-box {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      margin: 1.25rem 0;
+      overflow-x: auto;
+    }
+
+    .method-badge {
+      background: #10B981;
+      color: white;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .endpoint-url {
+      color: var(--text-primary);
+    }
+
+    /* Tabbed Code Editor block */
+    .code-container {
+      background: #1e1e2e;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+      margin-top: 1rem;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+    }
+
+    .code-header {
+      background: #151521;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .code-tabs {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .code-tab {
+      background: none;
+      border: none;
+      color: #9ca3af;
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 0.375rem;
+      transition: all 0.2s;
+    }
+
+    .code-tab.active {
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--brand-primary);
+    }
+
+    .btn-copy {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #d1d5db;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-family: inherit;
+      padding: 0.35rem 0.75rem;
+      border-radius: 0.375rem;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-copy:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .code-body {
+      padding: 1.5rem;
+      margin: 0;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      font-size: 0.85rem;
+      color: #cdd6f4;
+      line-height: 1.5;
+      overflow-x: auto;
+      background: #1e1e2e;
+    }
+
+    .code-snippet {
+      display: none;
+    }
+
+    .code-snippet.active {
+      display: block;
+    }
+
+    /* Highlighting classes */
+    .keyword { color: #cba6f7; }
+    .string { color: #a6e3a1; }
+    .comment { color: #7f849c; font-style: italic; }
+    .function { color: #89b4fa; }
+    .variable { color: #f5e0dc; }
+    .number { color: #fab387; }
+
+    /* Schema Table */
+    .schema-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 0;
+      font-size: 0.9rem;
+    }
+
+    .schema-table th, .schema-table td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    .schema-table th {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .schema-table td {
+      color: var(--text-secondary);
+    }
+
+    .type-pill {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.25rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .required-pill {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #EF4444;
+      background: rgba(239, 68, 68, 0.1);
+      padding: 0.1rem 0.35rem;
+      border-radius: 0.25rem;
+    }
+
+    /* Guidelines banner */
+    .docs-banner {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, rgba(234, 88, 12, 0.03) 100%);
+      border: 1px solid rgba(249, 115, 22, 0.2);
+      border-radius: 0.85rem;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .docs-banner-icon {
+      font-size: 1.5rem;
+    }
+
+    .docs-banner-content h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .docs-banner-content p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 968px) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 2rem 1.5rem;
+      }
+      
+      .docs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-info h1 {
+        font-size: 2.75rem;
+      }
+    }
+  </style>
+</head>
+<body class="light-theme">
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Akosnow Home">
+        <img src="icons/logo2.png" alt="Akosnow Logo" class="logo-icon" style="width: 2.25rem; height: 2.25rem; object-fit: contain;">
+        <span class="brand-name">Akosnow</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#products" class="nav-link">Products</a></li>
+          <li><a href="index.html#solutions" class="nav-link">Solutions</a></li>
+          <li><a href="partner.html" class="nav-link">Partner</a></li>
+          <li><a href="msge.html" class="nav-link">MSGE App</a></li>
+          <li><a href="integrations.html" class="nav-link">Integrations</a></li>
+          <li><a href="developer.html" class="nav-link active">Developer</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Toggles -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle Hamburger -->
+        <button class="mobile-hamburger" id="mobileHamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Developer Main Portal -->
+  <main class="dev-portal dot-grid-bg">
+    
+    <!-- Hero & Interactive API Sandbox Split -->
+    <div class="hero-split">
+      <div class="hero-info">
+        <div style="display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.75rem;">
+          <img src="icons/logo copy.png" alt="Akosnow MSGE Logo" style="width: 3.5rem; height: 3.5rem; border-radius: 12px; object-fit: contain; box-shadow: 0 8px 20px rgba(249, 115, 22, 0.18); border: 1px solid rgba(249, 115, 22, 0.25);">
+          <span style="font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; color: var(--brand-primary); letter-spacing: 0.05em; background: rgba(249, 115, 22, 0.08); padding: 0.25rem 0.75rem; border-radius: 2rem;">Akosnow MSGE</span>
+        </div>
+        <h1>MSGE Developer Integration Guide</h1>
+        <p>Connect your clients' business websites and lead capture forms directly to the Akosnow MSGE app. Receive real-time push messages, chimes, and UI updates the second a customer makes an inquiry.</p>
+        
+        <div class="docs-banner" style="background: none; border-color: var(--border-color); padding: 1.25rem 0;">
+          <div class="docs-banner-icon">🚀</div>
+          <div class="docs-banner-content">
+            <h4 style="font-size: 1rem;">Direct Firestore Sync</h4>
+            <p>Our Node backend writes leads straight to the `akosnow_alerts` collection target user, alerting the workspace admin dynamically.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sandbox Playpen console -->
+      <div class="sandbox-card schematic-card">
+        <div class="schematic-corner corner-tl"></div>
+        <div class="schematic-corner corner-tr"></div>
+        <div class="schematic-corner corner-bl"></div>
+        <div class="schematic-corner corner-br"></div>
+        <h3>⚡ API Sandbox Console</h3>
+        <p class="sandbox-desc">Customize values and trigger a real test payload to your local Express server endpoint (Port 5001).</p>
+        
+        <form id="sandboxForm">
+          <div class="sandbox-input-grid">
+            <div class="sandbox-field">
+              <label for="sbApiKey">API Key (User UID)</label>
+              <input id="sbApiKey" type="text" value="msge_api_demo_key_xyz987" placeholder="Paste your API key" required>
+            </div>
+            <div class="sandbox-field">
+              <label for="sbName">Contact Name</label>
+              <input id="sbName" type="text" value="Developer Test" required>
+            </div>
+          </div>
+          <div class="sandbox-input-grid">
+            <div class="sandbox-field">
+              <label for="sbEmail">Email Address</label>
+              <input id="sbEmail" type="email" value="developer@akosnow.com" required>
+            </div>
+            <div class="sandbox-field">
+              <label for="sbPhone">Phone Number</label>
+              <input id="sbPhone" type="text" value="+91 98765 43210" required>
+            </div>
+          </div>
+          <div class="sandbox-input-grid">
+            <div class="sandbox-field" style="grid-column: span 2;">
+              <label for="sbProduct">Product Interest</label>
+              <select id="sbProduct">
+                <option value="Akosnow Billing & POS">Akosnow Billing & POS</option>
+                <option value="Akosnow CRM">Akosnow CRM</option>
+                <option value="Akosnow Clinic">Akosnow Clinic</option>
+                <option value="Akosnow Garage">Akosnow Garage</option>
+                <option value="Akosnow MSGE">Akosnow MSGE</option>
+              </select>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn-sandbox-submit">
+            <span>🔥</span> Send Real Test Lead
+          </button>
+        </form>
+
+        <div class="sandbox-response-terminal" id="sbTerminal">
+          &gt; Ready to execute test API trigger...
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Setup Roadmap Grid -->
+    <div class="docs-section">
+      <h2>Integration Steps</h2>
+      
+      <div class="docs-grid">
+        
+        <!-- Step 1 Card -->
+        <div class="docs-card schematic-card">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <span class="card-step-badge">Step 1</span>
+          <h3>Obtain Connection Key</h3>
+          <p>Alerts require the target account's API Key (Firebase Auth User UID) to deliver notifications. This key is fetched from inside the mobile app profile screen.</p>
+          
+          <div class="docs-banner">
+            <img src="icons/logo copy.png" alt="MSGE Icon" style="width: 2.25rem; height: 2.25rem; border-radius: 6px; object-fit: contain; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid rgba(249, 115, 22, 0.15);">
+            <div class="docs-banner-content">
+              <h4>Get Key from Settings</h4>
+              <p>Download the <strong>Akosnow MSGE</strong> app, navigate to <strong>Settings / Profile</strong>, and copy your unique <strong>API Key / User UID</strong>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 Card -->
+        <div class="docs-card schematic-card">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <span class="card-step-badge">Step 2</span>
+          <h3>API Endpoint Specs</h3>
+          <p>Dispatches are routed via standard JSON `POST` requests to our REST gateway. The gateway runs locally on port `5001` in the workspace backend router.</p>
+          
+          <div class="api-endpoint-box">
+            <span class="method-badge">POST</span>
+            <span class="endpoint-url">http://localhost:5001/api/business/lead</span>
+          </div>
+
+          <table class="schema-table">
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Type</th>
+                <th>Req</th>
+                <th>Desc</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>formType</strong></td>
+                <td><span class="type-pill">String</span></td>
+                <td><span class="required-pill">Yes</span></td>
+                <td>Origin form identifier label.</td>
+              </tr>
+              <tr>
+                <td><strong>name</strong></td>
+                <td><span class="type-pill">String</span></td>
+                <td><span class="required-pill">Yes</span></td>
+                <td>Client's contact name.</td>
+              </tr>
+              <tr>
+                <td><strong>email</strong></td>
+                <td><span class="type-pill">String</span></td>
+                <td><span class="required-pill">Yes</span></td>
+                <td>Valid customer email.</td>
+              </tr>
+              <tr>
+                <td><strong>phone</strong></td>
+                <td><span class="type-pill">String</span></td>
+                <td><span class="required-pill">Yes</span></td>
+                <td>Contact phone number.</td>
+              </tr>
+              <tr>
+                <td><strong>product</strong></td>
+                <td><span class="type-pill">String</span></td>
+                <td>No</td>
+                <td>Product interest label.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="docs-banner" style="margin-top: 1.5rem; background: rgba(16, 185, 129, 0.05); border-color: rgba(16, 185, 129, 0.2);">
+            <div class="docs-banner-icon">💡</div>
+            <div class="docs-banner-content">
+              <h4 style="color: #10B981;">Dynamic Custom Fields Support</h4>
+              <p style="font-size: 0.85rem; margin-bottom: 0; color: var(--text-secondary);">You can send any extra custom key-value pairs in your JSON request body (e.g., <code style="font-family: monospace; color: var(--brand-primary);">message</code>, <code style="font-family: monospace; color: var(--brand-primary);">budget</code>, <code style="font-family: monospace; color: var(--brand-primary);">location</code>). Akosnow MSGE will automatically format and display them dynamically in your MSGE app notification.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 Card -->
+        <div class="docs-card schematic-card" style="grid-column: span 2;">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <span class="card-step-badge">Step 3</span>
+          <h3>Copy Implementation Code</h3>
+          <p>Implement the secure backend route proxy on Node.js/Express, or write native async fetch event dispatchers inside browser submit handlers.</p>
+
+          <div class="code-container">
+            <div class="code-header">
+              <div class="code-tabs">
+                <button class="code-tab active" data-tab="node">Node.js (Express)</button>
+                <button class="code-tab" data-tab="js">JavaScript (Browser)</button>
+              </div>
+              <button class="btn-copy" id="btnCopy">
+                <span>📋</span> Copy Code
+              </button>
+            </div>
+            
+            <pre class="code-body"><code id="codeNode" class="code-snippet active"><span class="keyword">const</span> express = <span class="function">require</span>(<span class="string">'express'</span>);
+<span class="keyword">const</span> fetch = <span class="function">require</span>(<span class="string">'node-fetch'</span>);
+<span class="keyword">const</span> router = express.<span class="function">Router</span>();
+
+<span class="comment">// 1. POST webhook route on client server</span>
+router.<span class="function">post</span>(<span class="string">'/api/business/lead'</span>, <span class="keyword">async</span> (req, res) => {
+  <span class="keyword">const</span> { name, company, email, phone, product } = req.body;
+  
+  <span class="keyword">try</span> {
+    <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">"https://api.akosnow.com/v1/leads"</span>, {
+      method: <span class="string">"POST"</span>,
+      headers: {
+        <span class="string">"Content-Type"</span>: <span class="string">"application/json"</span>
+      },
+      body: JSON.<span class="function">stringify</span>({
+        workspaceId: <span class="string">"WS_84HK91"</span>,
+        apiKey: <span class="string">"ak_live_xxxxxxxxx"</span>,
+        event: <span class="string">"lead"</span>,
+        data: {
+          name: name,
+          company: company,
+          email: email,
+          phone: phone,
+          product: product,
+          source: <span class="string">"Website Lead Form"</span>
+        }
+      })
+    });
+
+    <span class="keyword">const</span> result = <span class="keyword">await</span> response.<span class="function">json</span>();
+    res.<span class="function">json</span>(result);
+  } <span class="keyword">catch</span> (error) {
+    res.<span class="function">status</span>(<span class="number">500</span>).<span class="function">json</span>({ success: <span class="keyword">false</span>, error: error.message });
+  }
+});</code><code id="codeJs" class="code-snippet"><span class="comment">// 2. Frontend event handler for capture form submission</span>
+<span class="keyword">const</span> submitLeadForm = <span class="keyword">async</span> (event) => {
+  event.<span class="function">preventDefault</span>();
+
+  <span class="keyword">const</span> payload = {
+    workspaceId: <span class="string">"WS_84HK91"</span>,
+    apiKey: <span class="string">"ak_live_xxxxxxxxx"</span>,
+    event: <span class="string">"lead"</span>,
+    data: {
+      name: document.<span class="function">getElementById</span>(<span class="string">'fullName'</span>).value,
+      company: document.<span class="function">getElementById</span>(<span class="string">'companyName'</span>).value || <span class="string">"N/A"</span>,
+      email: document.<span class="function">getElementById</span>(<span class="string">'emailAddress'</span>).value,
+      phone: document.<span class="function">getElementById</span>(<span class="string">'phoneNumber'</span>).value,
+      product: document.<span class="function">getElementById</span>(<span class="string">'productInterest'</span>).value,
+      source: <span class="string">"Website Lead Form"</span>
+    }
+  };
+
+  <span class="keyword">try</span> {
+    <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">"http://localhost:5001/api/business/lead"</span>, {
+      method: <span class="string">"POST"</span>,
+      headers: {
+        <span class="string">"Content-Type"</span>: <span class="string">"application/json"</span>
+      },
+      body: JSON.<span class="function">stringify</span>(payload)
+    });
+    
+    <span class="keyword">const</span> result = <span class="keyword">await</span> response.<span class="function">json</span>();
+    <span class="keyword">if</span> (result.success) {
+      <span class="function">alert</span>(<span class="string">"Lead alert successfully dispatched to MSGE app!"</span>);
+    }
+  } <span class="keyword">catch</span> (error) {
+    console.<span class="function">error</span>(<span class="string">"Integration failed:"</span>, error);
+  }
+};</code></pre>
+          </div>
+        </div>
+
+        <!-- Step 4 Card -->
+        <div class="docs-card schematic-card" style="grid-column: span 2;">
+          <div class="schematic-corner corner-tl"></div>
+          <div class="schematic-corner corner-tr"></div>
+          <div class="schematic-corner corner-bl"></div>
+          <div class="schematic-corner corner-br"></div>
+          <span class="card-step-badge">Step 4</span>
+          <h3>Command Line Testing</h3>
+          <p>Quickly dispatch test notifications from your system console using a shell curl payload.</p>
+          
+          <div class="code-container">
+            <div class="code-header">
+              <span style="font-size: 0.8rem; color: #9ca3af; font-weight: 600;">Bash Terminal</span>
+              <button class="btn-copy" id="btnCopyCurl">
+                <span>📋</span> Copy Command
+              </button>
+            </div>
+            <pre class="code-body"><code id="codeCurl">curl -X POST http://localhost:5001/api/business/lead \
+  -H <span class="string">"Content-Type: application/json"</span> \
+  -d <span class="string">'{
+    "workspaceId": "WS_84HK91",
+    "apiKey": "ak_live_xxxxxxxxx",
+    "event": "lead",
+    "data": {
+      "name": "Integration Test",
+      "phone": "+91 99999 88888",
+      "email": "dev@akosnow.com",
+      "product": "MSGE by Akosnow",
+      "source": "cURL Tester"
+    }
+  }'</span></code></pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-info-col">
+        <a href="index.html" class="footer-logo">
+          <img src="icons/logo2.png" alt="Akosnow Logo" style="width: 2rem; height: 2rem; object-fit: contain; vertical-align: middle;">
+          <span class="brand-name" style="color: white;">Akosnow</span>
+        </a>
+        <p class="footer-desc" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.25rem;">
+          Akosnow develops secure, scalable, and business-focused software solutions that help organizations improve efficiency, automate operations, and accelerate digital transformation.
+        </p>
+        <p class="footer-tagline" style="font-weight: 700;">Smart Software. Smarter Business.</p>
+        <p class="footer-desc" style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic;">
+          Empowering businesses through trusted partnerships and innovative software solutions.
+        </p>
+        <p class="footer-copyright">&copy; 2026 Akosnow. All rights reserved.</p>
+      </div>
+
+      <!-- Links Column 1: Products -->
+      <div class="footer-links-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="index.html#products">Billing & POS</a></li>
+          <li><a href="index.html#products">Akosnow CRM</a></li>
+          <li><a href="index.html#products">Akosnow Clinic</a></li>
+          <li><a href="index.html#products">Restaurant POS</a></li>
+          <li><a href="index.html#products">Akosnow Garage</a></li>
+          <li><a href="index.html#products">Akosnow Pharmacy</a></li>
+          <li><a href="index.html#products">Akosnow Hotel</a></li>
+          <li><a href="index.html#products">Akosnow School</a></li>
+          <li><a href="index.html#products">Akosnow Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Solutions -->
+      <div class="footer-links-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="index.html#solutions">Retail & Commerce</a></li>
+          <li><a href="index.html#solutions">Healthcare Systems</a></li>
+          <li><a href="index.html#solutions">Hospitality Operations</a></li>
+          <li><a href="index.html#solutions">Automotive Workshops</a></li>
+          <li><a href="index.html#solutions">Educational Facilities</a></li>
+          <li><a href="index.html#solutions">Community Platforms</a></li>
+          <li><a href="index.html#solutions">Enterprise Systems</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3: Company & Resources -->
+      <div class="footer-links-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#why-choose">About Us</a></li>
+          <li><a href="partner.html">Partner Program</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+        <h4 style="margin-top: 1.5rem;">Resources</h4>
+        <ul>
+          <li><a href="developer.html">Documentation</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#contact">Support</a></li>
+          <li><a href="#">Product Updates & Release Notes</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Modules -->
+  <script src="script.js"></script>
+  
+  <!-- Developer Portal Page interactive logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Tab Switching Handler
+      const tabs = document.querySelectorAll('.code-tab');
+      const snippets = document.querySelectorAll('.code-snippet');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          snippets.forEach(s => s.classList.remove('active'));
+          
+          tab.classList.add('active');
+          const targetId = tab.getAttribute('data-tab') === 'node' ? 'codeNode' : 'codeJs';
+          document.getElementById(targetId).classList.add('active');
+        });
+      });
+
+      // 2. Copy Code Handler
+      const btnCopy = document.getElementById('btnCopy');
+      btnCopy.addEventListener('click', () => {
+        const activeSnippet = document.querySelector('.code-snippet.active');
+        const text = activeSnippet.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          btnCopy.innerHTML = '<span>✓</span> Copied!';
+          setTimeout(() => {
+            btnCopy.innerHTML = '<span>📋</span> Copy Code';
+          }, 2000);
+        }).catch(err => {
+          console.error('Could not copy text: ', err);
+        });
+      });
+
+      // 3. Copy Curl Command Handler
+      const btnCopyCurl = document.getElementById('btnCopyCurl');
+      btnCopyCurl.addEventListener('click', () => {
+        const curlSnippet = document.getElementById('codeCurl');
+        const text = curlSnippet.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          btnCopyCurl.innerHTML = '<span>✓</span> Copied!';
+          setTimeout(() => {
+            btnCopyCurl.innerHTML = '<span>📋</span> Copy Command';
+          }, 2000);
+        }).catch(err => {
+          console.error('Could not copy text: ', err);
+        });
+      });
+
+      // 4. API Sandbox Live Client Implementation
+      const sandboxForm = document.getElementById('sandboxForm');
+      const sbTerminal = document.getElementById('sbTerminal');
+
+      sandboxForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const apiKey = document.getElementById('sbApiKey').value.trim();
+        localStorage.setItem('msge_user_api_key', apiKey);
+        const contactName = document.getElementById('sbName').value.trim();
+        const email = document.getElementById('sbEmail').value.trim();
+        const phone = document.getElementById('sbPhone').value.trim();
+        const product = document.getElementById('sbProduct').value;
+
+        sbTerminal.innerHTML = `> Initiating post request to REST API...\n> Endpoint: http://localhost:5001/api/business/lead\n> Packaging payload...`;
+        sbTerminal.style.color = '#fab387'; // Orange pending
+
+        const payload = {
+          workspaceId: "akosnow_leads",
+          apiKey: apiKey,
+          event: "lead",
+          data: {
+            name: contactName,
+            email: email,
+            phone: phone,
+            product: product,
+            source: "API Sandbox Client"
+          }
+        };
+
+        try {
+          const response = await fetch("http://localhost:5001/api/business/lead", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+          });
+
+          const result = await response.json();
+          if (result.success) {
+            sbTerminal.style.color = '#a6e3a1'; // Green success
+            sbTerminal.innerHTML = `> HTTP 200 OK\n> Alert dispatched successfully!\n> Workspace: akosnow_leads\n> Notification chimes fired in MSGE client workspace!`;
+          } else {
+            sbTerminal.style.color = '#f38ba8'; // Red error
+            sbTerminal.innerHTML = `> HTTP 400 Bad Request\n> Gateway Error: ${result.error || 'Unknown Server Error'}`;
+          }
+        } catch (error) {
+          sbTerminal.style.color = '#f38ba8'; // Red error
+          sbTerminal.innerHTML = `> Connection Failed!\n> Error: ${error.message}\n> Verify your MSGE Node backend is listening on http://localhost:5001`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

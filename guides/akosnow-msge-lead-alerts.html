@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Push Alerts with Akosnow MSGE | Integration Guide</title>
+  <meta name="title" content="Real-Time Push Alerts with Akosnow MSGE | Integration Guide">
+  <meta name="description" content="Learn how website lead forms and security audit events trigger instant push notifications and audio chimes via the Akosnow MSGE REST API Gateway.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://qsecurex.akosnow.com/guides/akosnow-msge-lead-alerts.html">
+
+  <!-- Open Graph / Social Media SEO -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://qsecurex.akosnow.com/guides/akosnow-msge-lead-alerts.html">
+  <meta property="og:title" content="Real-Time Push Alerts with Akosnow MSGE | Integration Guide">
+  <meta property="og:description" content="Sub-100ms lead notification dispatches connecting website form submissions directly to Akosnow MSGE mobile apps.">
+  <meta property="og:image" content="../assets/gwag_1764444804643.png">
+  <meta property="og:site_name" content="Akosnow & QSecureX Guides">
+
+  <!-- Twitter Card SEO -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://qsecurex.akosnow.com/guides/akosnow-msge-lead-alerts.html">
+  <meta name="twitter:title" content="Real-Time Push Alerts with Akosnow MSGE">
+  <meta name="twitter:description" content="REST API webhooks and Firestore sync for real-time customer alert notifications.">
+  <meta name="twitter:image" content="../assets/gwag_1764444804643.png">
+
+  <!-- Structured Data JSON-LD Schemas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://qsecurex.akosnow.com/guides/akosnow-msge-lead-alerts.html#article",
+        "headline": "Real-Time Push Alerts with Akosnow MSGE",
+        "description": "Learn how website lead forms and security audit events trigger instant push notifications and audio chimes via the Akosnow MSGE REST API Gateway.",
+        "author": { "@type": "Organization", "name": "Akosnow & QSecureX Team" },
+        "publisher": { "@type": "Organization", "name": "Akosnow", "url": "https://akosnow.com" },
+        "datePublished": "2026-07-26",
+        "dateModified": "2026-07-26",
+        "mainEntityOfPage": "https://qsecurex.akosnow.com/guides/akosnow-msge-lead-alerts.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://qsecurex.akosnow.com/guides/akosnow-msge-lead-alerts.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://qsecurex.akosnow.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Knowledge Hub", "item": "https://qsecurex.akosnow.com/#guides" },
+          { "@type": "ListItem", "position": 3, "name": "Akosnow MSGE Alerts", "item": "https://qsecurex.akosnow.com/guides/akosnow-msge-lead-alerts.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <img src="../assets/app_icon_1024_1764268476863.png" alt="QSecureX Logo" class="logo-img">
+        <span class="logo-text">QSecure<span class="gradient-text">X</span></span>
+        <span class="header-ecosystem-tag">by Akosnow</span>
+      </a>
+      <div class="header-actions">
+        <a href="../index.html" class="btn btn-outline">← Back to QSecureX</a>
+        <a href="../index.html#pricing" class="btn btn-primary">Request Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 120px; padding-bottom: 80px; max-width: 860px;">
+    <div class="badge">Integrations Guide</div>
+    <h1 style="font-size: 2.5rem; margin: 16px 0 24px; color: var(--text-main);">Real-Time Push Alerts with Akosnow MSGE</h1>
+    
+    <div style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 32px;">
+      <p style="margin-bottom: 20px;">
+        Akosnow MSGE (Messaging Gateway Engine) connects business websites, landing page lead forms, and desktop application events directly to mobile notification devices in real time.
+      </p>
+
+      <h2 style="color: var(--primary); font-size: 1.6rem; margin: 32px 0 16px;">How Lead Submissions Work</h2>
+      <p style="margin-bottom: 20px;">
+        When a prospect submits a Pricing Quote Request on QSecureX, the client-side JavaScript dispatches an HTTP POST payload to the MSGE REST API Gateway (`http://localhost:5001/api/business/lead`).
+      </p>
+      <p style="margin-bottom: 20px;">
+        The backend writes the document directly to the target user's <code>akosnow_alerts</code> Firestore collection using their API Key UID (e.g. <code>L3vvmpypCtPr43TjZK5iHyGI5Gs2</code>). Within 100ms, the Akosnow MSGE listener dispatches a high-priority push notification and chime alert to the workspace admin.
+      </p>
+
+      <div style="margin-top: 40px; padding: 28px; background: rgba(74, 222, 128, 0.05); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 12px;">
+        <h3 style="color: var(--text-main); margin-bottom: 12px;">Test MSGE Integration Live</h3>
+        <p style="font-size: 0.95rem; margin-bottom: 16px;">Submit a quote request to trigger an instant lead alert in MSGE.</p>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="../index.html#pricing" class="btn btn-primary">Test Lead Form</a>
+          <a href="../akosnow website/developer.html" class="btn btn-outline">Developer Sandbox Console ↗</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 QSecureX. All rights reserved.</p>
+      <p><a href="../index.html">Back to Home</a></p>
+    </div>
+  </footer>
+</body>
+</html>

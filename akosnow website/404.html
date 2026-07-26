@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Page not found. Return to Akosnow to discover secure, offline-first business software solutions.">
+  <title>404 - Page Not Found | Akosnow</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Page Favicon Logo -->
+  <link rel="icon" type="image/png" href="icons/logo2.png">
+  <link rel="apple-touch-icon" href="icons/logo2.png">
+
+  <!-- Theme Script (Inline to prevent Flash of Unstyled Theme) -->
+  <script>
+    const savedTheme = localStorage.getItem('akosnow-theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark-theme');
+    }
+  </script>
+</head>
+<body class="light-theme">
+  <!-- Sticky Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Akosnow Home">
+        <img src="icons/logo2.png" alt="Akosnow Logo" class="logo-icon" style="width: 2.25rem; height: 2.25rem; object-fit: contain;">
+        <span class="brand-name">Akosnow</span>
+      </a>
+
+      <!-- Navigation links redirecting back to homepage anchors -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#products" class="nav-link">Products</a></li>
+          <li><a href="index.html#solutions" class="nav-link">Solutions</a></li>
+          <li><a href="partner.html" class="nav-link">Partner</a></li>
+          <li><a href="msge.html" class="nav-link">MSGE App</a></li>
+          <li><a href="integrations.html" class="nav-link">Integrations</a></li>
+          <li><a href="developer.html" class="nav-link">Developer</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Toggles -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="index.html#contact" class="btn btn-primary nav-cta-btn">Request Demo</a>
+
+        <!-- Mobile Menu Toggle Hamburger -->
+        <button class="mobile-hamburger" id="mobileHamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Error Content Area -->
+  <section style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; padding: 6rem 1.5rem; text-align: center; background-color: var(--bg-primary);">
+    <div style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+      <!-- Vector graphic representation of error -->
+      <div style="font-size: 6.5rem; font-family: 'Outfit', sans-serif; font-weight: 800; line-height: 1; color: var(--brand-primary); margin-bottom: 0.5rem; text-shadow: 0 10px 30px rgba(249, 115, 22, 0.15);">
+        404
+      </div>
+      
+      <h1 class="section-title" style="margin: 0; font-size: 2.25rem;">Page Not Found</h1>
+      
+      <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem;">
+        The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+      </p>
+
+      <!-- Search redirection helpers -->
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem;">
+        <a href="index.html" class="btn btn-primary" style="font-weight: 600; text-decoration: none;">Return to Homepage</a>
+        <a href="index.html#products" class="btn btn-outline" style="font-weight: 600; text-decoration: none;">Explore Software Products</a>
+      </div>
+
+      <!-- Quick Helpful Links -->
+      <div style="border-top: 1px solid var(--border-color); padding-top: 2rem; width: 100%;">
+        <p style="font-size: 0.95rem; color: var(--text-primary); font-weight: 600; margin-bottom: 1rem;">Looking for something specific?</p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; font-size: 0.9rem;">
+          <a href="partner.html" style="color: var(--brand-primary); font-weight: 600; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--brand-primary)'" onmouseout="this.style.borderColor='transparent'">Channel Partner Program</a>
+          <span style="color: var(--border-color);">|</span>
+          <a href="index.html#solutions" style="color: var(--brand-primary); font-weight: 600; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--brand-primary)'" onmouseout="this.style.borderColor='transparent'">Business Solutions</a>
+          <span style="color: var(--border-color);">|</span>
+          <a href="index.html#why-choose" style="color: var(--brand-primary); font-weight: 600; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--brand-primary)'" onmouseout="this.style.borderColor='transparent'">About Akosnow</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); padding: 5rem 0 2rem 0;">
+    <div class="container footer-grid">
+      <!-- Info Column -->
+      <div class="footer-info-col">
+        <a href="index.html" class="brand-logo">
+          <img src="icons/logo2.png" alt="Akosnow Logo" style="width: 2rem; height: 2rem; object-fit: contain; vertical-align: middle;">
+          <span>Akosnow</span>
+        </a>
+        <p class="footer-desc" style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600;">
+          Akosnow Software
+        </p>
+        <p class="footer-desc" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.25rem;">
+          Akosnow develops secure, scalable, and business-focused software solutions that help organizations improve efficiency, automate operations, and accelerate digital transformation.
+        </p>
+        <p class="footer-tagline" style="font-weight: 700;">Smart Software. Smarter Business.</p>
+        <p class="footer-desc" style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-top: 0.5rem; margin-bottom: 1rem; font-style: italic;">
+          Empowering businesses through trusted partnerships and innovative software solutions.
+        </p>
+        <p class="footer-copyright">&copy; 2026 Akosnow. All rights reserved.</p>
+      </div>
+
+      <!-- Links Column 1: Products -->
+      <div class="footer-links-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="index.html#products">Billing & POS</a></li>
+          <li><a href="index.html#products">Akosnow CRM</a></li>
+          <li><a href="index.html#products">Akosnow Clinic</a></li>
+          <li><a href="index.html#products">Restaurant POS</a></li>
+          <li><a href="index.html#products">Akosnow Garage</a></li>
+          <li><a href="index.html#products">Akosnow Pharmacy</a></li>
+          <li><a href="index.html#products">Akosnow Hotel</a></li>
+          <li><a href="index.html#products">Akosnow School</a></li>
+          <li><a href="index.html#products">Akosnow Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Solutions -->
+      <div class="footer-links-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="index.html#solutions">Retail & Commerce</a></li>
+          <li><a href="index.html#solutions">Healthcare Systems</a></li>
+          <li><a href="index.html#solutions">Hospitality Operations</a></li>
+          <li><a href="index.html#solutions">Automotive Workshops</a></li>
+          <li><a href="index.html#solutions">Educational Facilities</a></li>
+          <li><a href="index.html#solutions">Community Platforms</a></li>
+          <li><a href="index.html#solutions">Enterprise Systems</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3: Company & Resources -->
+      <div class="footer-links-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#why-choose">About Us</a></li>
+          <li><a href="partner.html">Partner Program</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+        <h4 style="margin-top: 1.5rem;">Resources</h4>
+        <ul>
+          <li><a href="developer.html">Documentation</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#contact">Support</a></li>
+          <li><a href="#">Product Updates & Release Notes</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Modules -->
+  <script src="script.js"></script>
+</body>
+</html>

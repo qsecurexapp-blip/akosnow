@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akosnow MSGE & QSecureX | Real-Time Push Lead Engine & Business Software Hub</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Akosnow MSGE is the real-time business notification engine connecting QSecureX privacy vaults, POS billing, CRM leads, and website forms with instant mobile push alerts and Firestore sync.">
+  <meta name="keywords" content="Akosnow, Akosnow MSGE, QSecureX, QSecure, real-time push alerts, business inbox, lead notification software, B2B business software, POS integration, customer alert engine">
+  <link rel="canonical" href="https://akosnow.com/msge.html">
+  
+  <!-- Page Favicon Logo -->
+  <link rel="icon" type="image/png" href="icons/logo2.png">
+  <link rel="apple-touch-icon" href="icons/logo2.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=2">
+
+  <!-- Theme Script (Inline to prevent Flash of Unstyled Theme) -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('akosnow-theme') || 'light';
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+      } else {
+        document.documentElement.classList.remove('dark-theme');
+      }
+    })();
+  </script>
+
+  <style>
+    /* Breathtaking Repositioned Landing Page Styles */
+    .msge-landing {
+      margin-top: 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ambient glow elements */
+    .ambient-glow-1 {
+      position: absolute;
+      top: -10%;
+      right: -10%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, rgba(234, 88, 12, 0) 70%);
+      filter: blur(100px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .ambient-glow-2 {
+      position: absolute;
+      bottom: 15%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0) 70%);
+      filter: blur(90px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .product-hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text h1 span {
+      background: linear-gradient(135deg, var(--brand-primary) 0%, #EA580C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-download {
+      background: var(--brand-primary);
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.95rem 1.75rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(249, 115, 22, 0.2);
+      transition: all var(--transition-normal);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-download:hover {
+      background: #EA580C;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(249, 115, 22, 0.25);
+    }
+
+    .btn-docs-link {
+      background: rgba(249, 115, 22, 0.08);
+      color: var(--brand-primary);
+      border: 1px solid rgba(249, 115, 22, 0.25);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.95rem 1.75rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: all var(--transition-normal);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-docs-link:hover {
+      background: rgba(249, 115, 22, 0.12);
+      transform: translateY(-2px);
+    }
+
+    /* Breathtaking Visual Flow Diagram Chart */
+    .flow-chart-container {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .flow-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      position: relative;
+    }
+
+    .flow-source-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      width: 100%;
+    }
+
+    .flow-badge {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      padding: 0.65rem 0.4rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .flow-badge span {
+      font-size: 1.25rem;
+    }
+
+    .flow-badge:hover {
+      border-color: var(--brand-primary);
+      color: var(--brand-primary);
+      transform: translateY(-2px);
+    }
+
+    /* Core Gateway Box */
+    .gateway-hub {
+      background: linear-gradient(135deg, var(--brand-primary) 0%, #EA580C 100%);
+      color: white;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      text-align: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      box-shadow: 0 10px 25px rgba(249, 115, 22, 0.25);
+      position: relative;
+      margin: 1rem auto;
+      width: 80%;
+      z-index: 2;
+    }
+
+    .gateway-hub::before {
+      content: '';
+      position: absolute;
+      top: -1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 1.25rem;
+      background: linear-gradient(to bottom, var(--border-color), var(--brand-primary));
+    }
+
+    .gateway-hub::after {
+      content: '';
+      position: absolute;
+      bottom: -1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 1.25rem;
+      background: linear-gradient(to bottom, var(--brand-primary), var(--border-color));
+    }
+
+    .flow-output-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .flow-output-card {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      text-align: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    .flow-output-card span {
+      font-size: 1.5rem;
+    }
+
+    /* Dashboard Metrics Panel */
+    .dashboard-stats-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      margin-top: 3rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .dashboard-stats-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .stat-badge {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Outcome Business Process Flow */
+    .process-flow-section {
+      max-width: 1100px;
+      margin: 5rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    .process-flow-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 3.5rem;
+    }
+
+    .process-flow-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: nowrap;
+    }
+
+    .process-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      padding: 1.25rem 0.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+      flex: 1;
+      min-width: 0;
+      text-align: center;
+    }
+
+    .process-card:hover {
+      border-color: var(--brand-primary);
+      transform: translateY(-2px);
+    }
+
+    .process-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .process-card h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .process-card p {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .process-arrow {
+      font-size: 1.5rem;
+      color: var(--brand-primary);
+      font-weight: 700;
+    }
+
+    /* Connectors Section */
+    .connectors-section {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .connectors-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .connectors-section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--brand-primary);
+      margin: 0.8rem auto 0;
+      border-radius: 2px;
+    }
+
+    .connectors-flex {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .connector-badge {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .connector-badge span {
+      font-size: 1.5rem;
+    }
+
+    .explore-connectors-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--brand-primary);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: all 0.2s;
+    }
+
+    .explore-connectors-btn:hover {
+      gap: 0.75rem;
+    }
+
+    /* Core Setup Roadmap Grid */
+    .steps-section {
+      max-width: 900px;
+      margin: 5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .steps-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .steps-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .step-row {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .step-num {
+      background: var(--brand-primary);
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(249, 115, 22, 0.2);
+    }
+
+    .step-content h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-content p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* Previews workspaces section */
+    .previews-section {
+      max-width: 1100px;
+      margin: 5rem auto;
+      padding: 4.5rem 2.25rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .previews-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .previews-header h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .previews-header p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    .preview-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+    }
+
+    .preview-tab {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .preview-tab.active {
+      color: var(--brand-primary);
+      background: rgba(249, 115, 22, 0.08);
+    }
+
+    .preview-pane {
+      display: none;
+    }
+
+    .preview-pane.active {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .preview-details h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .preview-details p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .preview-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .preview-bullets li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .preview-bullets li span {
+      color: #10B981;
+    }
+
+    .preview-screen-mock {
+      background: #1e1e2e;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      color: #cdd6f4;
+      font-size: 0.85rem;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .mock-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mock-header-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .mock-msg-bubble {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
+
+    /* Future AI Section styles */
+    .ai-section {
+      max-width: 1100px;
+      margin: 5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .ai-section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .ai-section-header h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+    }
+
+    .ai-badge {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #89b4fa;
+      background: rgba(137, 180, 250, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 2rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ai-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .ai-card {
+      background: linear-gradient(135deg, rgba(137, 180, 250, 0.05) 0%, rgba(137, 180, 250, 0.01) 100%);
+      border: 1px solid rgba(137, 180, 250, 0.15);
+      border-radius: 1rem;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: #89b4fa;
+    }
+
+    .ai-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .ai-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Downloads Action Area */
+    .downloads-cta {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, rgba(234, 88, 12, 0.03) 100%);
+      border: 1px solid rgba(249, 115, 22, 0.15);
+      border-radius: 1.5rem;
+      max-width: 1100px;
+      margin: 6rem auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .downloads-cta h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .downloads-cta p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.5;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .download-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      padding: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .download-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--brand-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .download-card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .download-card h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .download-card span {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 968px) {
+      .product-hero {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+      
+      .hero-ctas {
+        justify-content: center;
+      }
+
+      .flow-row {
+        flex-direction: column;
+      }
+
+      .gateway-hub {
+        width: 100%;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-flow-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .process-arrow {
+        transform: rotate(90deg);
+        margin: 0.5rem 0;
+      }
+
+      .preview-pane.active {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .ai-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .download-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 2.75rem;
+      }
+    }
+  </style>
+</head>
+<body class="light-theme">
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Akosnow Home">
+        <img src="icons/logo2.png" alt="Akosnow Logo" class="logo-icon" style="width: 2.25rem; height: 2.25rem; object-fit: contain;">
+        <span class="brand-name">Akosnow</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#products" class="nav-link">Products</a></li>
+          <li><a href="index.html#solutions" class="nav-link">Solutions</a></li>
+          <li><a href="partner.html" class="nav-link">Partner</a></li>
+          <li><a href="msge.html" class="nav-link active">MSGE App</a></li>
+          <li><a href="integrations.html" class="nav-link">Integrations</a></li>
+          <li><a href="developer.html" class="nav-link">Developer</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Toggles -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle Hamburger -->
+        <button class="mobile-hamburger" id="mobileHamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Repositioned Landing Area -->
+  <main class="msge-landing">
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- Repositioned Hero Section -->
+    <section class="product-hero">
+      <div class="hero-text">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+          <img src="icons/logo copy.png" alt="MSGE Logo" style="width: 3rem; height: 3rem; border-radius: 8px; object-fit: contain;">
+          <div>
+            <span style="font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; color: var(--brand-primary); letter-spacing: 0.05em; background: rgba(249, 115, 22, 0.08); padding: 0.25rem 0.75rem; border-radius: 2rem; display: inline-block;">MSGE Unified Business Inbox</span>
+            <span style="font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.08em; display: block; margin-top: 0.25rem; margin-left: 0.5rem;">by Akosnow</span>
+          </div>
+        </div>
+        <h1><span>Never miss another</span><br>customer inquiry.</h1>
+        <p>Receive website leads, appointments, orders, sales alerts, CRM updates, and operational business notifications instantly in one unified communication hub. MSGE connects your entire software ecosystem to your phone.</p>
+        
+        <div class="hero-ctas">
+          <a href="#downloads" class="btn-download">
+            <span>⬇️</span> Get the App
+          </a>
+          <a href="integrations.html" class="btn-docs-link">
+            <span>🔌</span> View Integrations
+          </a>
+        </div>
+      </div>
+
+      <!-- CSS Flow Chart Diagram -->
+      <div class="flow-chart-container">
+        <!-- Sources Row -->
+        <div class="flow-row">
+          <div class="flow-source-grid">
+            <div class="flow-badge"><span>🌐</span>Website</div>
+            <div class="flow-badge"><span>📝</span>WordPress</div>
+            <div class="flow-badge"><span>🛒</span>Shopify</div>
+            <div class="flow-badge"><span>📢</span>Meta Ads</div>
+            <div class="flow-badge"><span>📊</span>Google Forms</div>
+            <div class="flow-badge"><span>📋</span>Typeform</div>
+            <div class="flow-badge"><span>⚙️</span>REST API</div>
+          </div>
+        </div>
+
+        <!-- Central Gateway -->
+        <div class="gateway-hub">
+          ☁️ MSGE Integration Cloud
+        </div>
+
+        <!-- Middle Workspaces -->
+        <div class="flow-row">
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem; width: 100%;">
+            <div class="flow-badge" style="background: rgba(249, 115, 22, 0.04); border-color: rgba(249, 115, 22, 0.15);">POS Alerts</div>
+            <div class="flow-badge" style="background: rgba(249, 115, 22, 0.04); border-color: rgba(249, 115, 22, 0.15);">CRM Logs</div>
+            <div class="flow-badge" style="background: rgba(249, 115, 22, 0.04); border-color: rgba(249, 115, 22, 0.15);">Sales Leads</div>
+          </div>
+        </div>
+
+        <!-- Destinations Row -->
+        <div class="flow-row">
+          <div class="flow-output-row">
+            <div class="flow-output-card"><span>💻</span>Desktop Client</div>
+            <div class="flow-output-card"><span>📱</span>Android App</div>
+            <div class="flow-output-card"><span>🖥️</span>macOS Client</div>
+            <div class="flow-output-card"><span>🏁</span>Windows Inbox</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Statistics Section -->
+    <section style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      <div class="dashboard-stats-card">
+        <h3>📊 Live Workspace Dashboard Telemetry</h3>
+        <div class="stats-grid">
+          <div class="stat-badge">
+            <div class="stat-number" id="telemetryLeads" data-target="18">18</div>
+            <div class="stat-label">Leads Today</div>
+          </div>
+          <div class="stat-badge">
+            <div class="stat-number" id="telemetryOrders" data-target="34">34</div>
+            <div class="stat-label">Orders Logged</div>
+          </div>
+          <div class="stat-badge">
+            <div class="stat-number" id="telemetryAppointments" data-target="11">11</div>
+            <div class="stat-label">Appointments</div>
+          </div>
+          <div class="stat-badge">
+            <div class="stat-number" id="telemetryUnread" style="color: #ef4444;" data-target="6">6</div>
+            <div class="stat-label">Unread Alerts</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Business Process Outcome Flow -->
+    <section class="process-flow-section">
+      <h2>Circular Customer Journey</h2>
+      <div class="process-flow-grid">
+        <div class="process-card">
+          <div class="process-icon">👤</div>
+          <h4>Customer</h4>
+          <p>Initiates inquiries or bookings</p>
+        </div>
+        <div class="process-arrow">➔</div>
+        <div class="process-card">
+          <div class="process-icon">🌐</div>
+          <h4>Web / Shopify</h4>
+          <p>Dispatches real-time webhook</p>
+        </div>
+        <div class="process-arrow">➔</div>
+        <div class="process-card">
+          <div class="process-icon">📥</div>
+          <h4>MSGE Platform</h4>
+          <p>Alerts sales team workspaces</p>
+        </div>
+        <div class="process-arrow">➔</div>
+        <div class="process-card">
+          <div class="process-icon">👥</div>
+          <h4>Sales Team</h4>
+          <p>Follows up via preferred channel</p>
+        </div>
+        <div class="process-arrow">➔</div>
+        <div class="process-card">
+          <div class="process-icon">🗂️</div>
+          <h4>CRM & Invoice</h4>
+          <p>Logs deal & syncs database</p>
+        </div>
+        <div class="process-arrow">➔</div>
+        <div class="process-card" style="border-color: var(--brand-primary); background: rgba(249, 115, 22, 0.02);">
+          <div class="process-icon">🔄</div>
+          <h4>Customer Loop</h4>
+          <p>Receives product & re-enters flow</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supported Event Types Badge Strip -->
+    <section style="max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem; text-align: center;">
+      <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">Supported Platform Events</h3>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
+        <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 2rem; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">✓ Lead</span>
+        <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 2rem; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">✓ Appointment</span>
+        <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 2rem; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">✓ Order</span>
+        <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 2rem; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">✓ Payment</span>
+        <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 2rem; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">✓ Inventory Alert</span>
+        <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 2rem; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">✓ Support Ticket</span>
+        <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 2rem; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">✓ Membership Request</span>
+        <span style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 2rem; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">✓ Custom Event</span>
+      </div>
+    </section>
+
+    <!-- Security Trust Indicators Block -->
+    <section style="max-width: 1200px; margin: 3rem auto 4rem; padding: 0 1.5rem; text-align: center;">
+      <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.03) 0%, rgba(16, 185, 129, 0) 100%); border: 1px solid rgba(16, 185, 129, 0.12); border-radius: 1rem; padding: 1.75rem 1.25rem; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 700; color: var(--text-primary);">
+          <span style="color: #10b981; font-size: 1.2rem;">🔒</span> Secure API Keys
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 700; color: var(--text-primary);">
+          <span style="color: #10b981; font-size: 1.2rem;">🛡️</span> HTTPS Routing (TLS 1.3)
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 700; color: var(--text-primary);">
+          <span style="color: #10b981; font-size: 1.2rem;">📱</span> Real-Time WebSockets
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 700; color: var(--text-primary);">
+          <span style="color: #10b981; font-size: 1.2rem;">⚙️</span> Developer-Friendly REST
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 700; color: var(--text-primary);">
+          <span style="color: #10b981; font-size: 1.2rem;">💾</span> Encrypted Storage
+        </div>
+      </div>
+    </section>
+
+    <!-- Pre-Built Connectors Overview -->
+    <section class="connectors-section">
+      <h2>Supported Platforms & Connectors</h2>
+      <div class="connectors-flex">
+        <div class="connector-badge"><span>🌐</span> WordPress</div>
+        <div class="connector-badge"><span>🛒</span> Shopify</div>
+        <div class="connector-badge"><span>📋</span> Typeform</div>
+        <div class="connector-badge"><span>📊</span> Google Forms</div>
+        <div class="connector-badge"><span>📢</span> Meta Lead Ads</div>
+        <div class="connector-badge"><span>⚙️</span> REST Webhooks</div>
+        <div class="connector-badge" style="opacity: 0.65; border-style: dashed;"><span>⚡</span> Zapier (Soon)</div>
+      </div>
+      <div style="text-align: center;">
+        <a href="integrations.html" class="explore-connectors-btn">
+          Explore Integrations Directory ➔
+        </a>
+      </div>
+    </section>
+
+    <!-- Interactive Workspaces previews (Formerly bots) -->
+    <section class="previews-section">
+      <div class="previews-header">
+        <h2>Unified Workspace Inboxes</h2>
+        <p>Organize alerts, logs, and customer chat logs into specialized operational workspaces.</p>
+      </div>
+
+      <div class="preview-tabs">
+        <button class="preview-tab active" data-preview="leads">Leads Workspace</button>
+        <button class="preview-tab" data-preview="pos">POS Workspace</button>
+        <button class="preview-tab" data-preview="crm">CRM Workspace</button>
+      </div>
+
+      <!-- Previews Panes -->
+      <div class="preview-panes">
+        
+        <!-- Leads Workspace -->
+        <div class="preview-pane active" id="paneLeads">
+          <div class="preview-details">
+            <h3>Leads Workspace Inbox</h3>
+            <p>Directs website inquiries, free trial requests, and contact forms into a dedicated notification stream. Lets you quickly contact the prospect instantly via your preferred channel.</p>
+            <ul class="preview-bullets">
+              <li><span>✓</span> Pre-formatted client contact coordinates.</li>
+              <li><span>✓</span> Interactive quick buttons: [View Details], [Mark Contacted].</li>
+              <li><span>✓</span> Instant system chimes and OS native notifications.</li>
+            </ul>
+          </div>
+          <div class="preview-screen-mock">
+            <div class="mock-header">
+              <span class="mock-header-title">Leads Workspace</span>
+              <span style="color: #a6e3a1; font-size: 0.75rem;">Online</span>
+            </div>
+            <div class="mock-msg-bubble">
+<strong>Website Lead: Akosnow Billing & POS</strong>
+
+Source: Hero Lead Demo Form
+Name: Sanoj
+Company: Akosnow Developer
+Email: sales@akosnow.com
+Phone: +91 99955 44332
+
+[View Details]
+[Mark Contacted]
+[Mute Alerts]
+            </div>
+          </div>
+        </div>
+
+        <!-- POS Workspace -->
+        <div class="preview-pane" id="panePos">
+          <div class="preview-details">
+            <h3>POS Workspace Inbox</h3>
+            <p>Streams telemetry data from your cash registers. Track total sales, daily profits, bill counts, and get instant notifications if items fall below threshold levels.</p>
+            <ul class="preview-bullets">
+              <li><span>✓</span> Automated stock out alerts: Castrol Engine Oil (0 Left).</li>
+              <li><span>✓</span> Live profit summaries: ₹50,630 Sales.</li>
+              <li><span>✓</span> Interactive buttons: [Order Now], [Ignore].</li>
+            </ul>
+          </div>
+          <div class="preview-screen-mock">
+            <div class="mock-header">
+              <span class="mock-header-title">POS Workspace</span>
+              <span style="color: #a6e3a1; font-size: 0.75rem;">Online</span>
+            </div>
+            <div class="mock-msg-bubble">
+<strong>⚠️ Low Stock Alert</strong>
+
+Product: Castrol Engine Oil 15W-40
+Stock Remaining: 3 units (Threshold: 5)
+Location: Aisle 4
+
+[Order Now]
+[Ignore]
+            </div>
+          </div>
+        </div>
+
+        <!-- CRM Workspace -->
+        <div class="preview-pane" id="paneCrm">
+          <div class="preview-details">
+            <h3>CRM Workspace Inbox</h3>
+            <p>Monitors customer relations, automotive service reminders, active rentals, and outstanding invoices. Connects garage platforms directly to dashboard notifications.</p>
+            <ul class="preview-bullets">
+              <li><span>✓</span> Service reminders for pending oil changes or vehicle repairs.</li>
+              <li><span>✓</span> Active rental trackers with expected return timestamps.</li>
+              <li><span>✓</span> Interactive buttons: [View Active Rentals], [Mute Alerts].</li>
+            </ul>
+          </div>
+          <div class="preview-screen-mock">
+            <div class="mock-header">
+              <span class="mock-header-title">CRM Workspace</span>
+              <span style="color: #a6e3a1; font-size: 0.75rem;">Online</span>
+            </div>
+            <div class="mock-msg-bubble">
+<strong>🚗 Active Rental Alert</strong>
+
+Item: Audi R8 Spyder
+Customer: John Doe (Phone: +91 99955 44332)
+Expected Return: 20 July 2026
+
+[View Active Rentals]
+[Mute Alerts]
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Future AI Assistant Section -->
+    <section class="ai-section">
+      <div class="ai-section-header">
+        <span class="ai-badge">Forward Looking</span>
+        <h2>AI Assistant (Coming Soon)</h2>
+        <p>Powering your unified business inbox with predictive AI capabilities.</p>
+      </div>
+
+      <div class="ai-grid">
+        <div class="ai-card">
+          <h3>Lead Summarizer</h3>
+          <p>Condenses long client details and custom comments into quick, bulleted digests for immediate context reading before calls.</p>
+        </div>
+        <div class="ai-card">
+          <h3>Smart Alert Routing</h3>
+          <p>Intelligently tracks alert categories and automatically delegates tasks to active members of the sales team.</p>
+        </div>
+        <div class="ai-card">
+          <h3>AI Autocomplete Replies</h3>
+          <p>Suggests contextual reply templates (for chat/email) to help agents reply to leads in under 30 seconds.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation steps -->
+    <section class="steps-section">
+      <h2>Setting up MSGE Inbox</h2>
+      <div class="steps-timeline">
+        <div class="step-row">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Install MSGE Client</h3>
+            <p>Download the desktop dashboard or mobile inbox application for Android and macOS. Log in with your corporate credential profile.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Retrieve Workspace Credentials</h3>
+            <p>Go to settings in the MSGE dashboard to copy your Workspace ID and API Key. This secures and routes your integration tunnel.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Map Webhooks or Plugins</h3>
+            <p>Connect Shopify, WordPress WooCommerce, or Google Forms using our pre-built plugins or simple REST post requests.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>Receive Alerts and Close Deals</h3>
+            <p>Watch incoming events drop into specialized workspaces in real time. Take action immediately and close invoices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Downloads Area -->
+    <section class="downloads-cta" id="downloads">
+      <h2>Get Akosnow MSGE App Today</h2>
+      <p>Download the client application on your desktop or mobile device to start receiving alerts instantly.</p>
+      
+      <div class="download-grid">
+        <div class="download-card">
+          <div class="download-card-icon">🍎</div>
+          <h4>macOS</h4>
+          <span>Download .dmg</span>
+        </div>
+        <div class="download-card">
+          <div class="download-card-icon">💻</div>
+          <h4>Windows</h4>
+          <span>Download .exe</span>
+        </div>
+        <div class="download-card">
+          <div class="download-card-icon">🤖</div>
+          <h4>Android</h4>
+          <span>Download .apk</span>
+        </div>
+        <div class="download-card">
+          <div class="download-card-icon">🏪</div>
+          <h4>Google Play</h4>
+          <span>Get it on Play Store</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-info-col">
+        <a href="index.html" class="footer-logo">
+          <img src="icons/logo2.png" alt="Akosnow Logo" style="width: 2rem; height: 2rem; object-fit: contain; vertical-align: middle;">
+          <span>Akosnow</span>
+        </a>
+        <p class="footer-desc" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.25rem;">
+          Akosnow develops secure, scalable, and business-focused software solutions that help organizations improve efficiency, automate operations, and accelerate digital transformation.
+        </p>
+        <p class="footer-tagline" style="font-weight: 700;">Smart Software. Smarter Business.</p>
+        <p class="footer-copyright">&copy; 2026 Akosnow. All rights reserved.</p>
+      </div>
+
+      <!-- Links Column 1: Products -->
+      <div class="footer-links-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="index.html#products">Billing & POS</a></li>
+          <li><a href="index.html#products">Akosnow CRM</a></li>
+          <li><a href="index.html#products">Akosnow Clinic</a></li>
+          <li><a href="index.html#products">Restaurant POS</a></li>
+          <li><a href="index.html#products">Akosnow Garage</a></li>
+          <li><a href="index.html#products">Akosnow Pharmacy</a></li>
+          <li><a href="index.html#products">Akosnow Hotel</a></li>
+          <li><a href="index.html#products">Akosnow School</a></li>
+          <li><a href="index.html#products">Akosnow Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Solutions -->
+      <div class="footer-links-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="index.html#solutions">Retail & Commerce</a></li>
+          <li><a href="index.html#solutions">Healthcare Systems</a></li>
+          <li><a href="index.html#solutions">Hospitality Operations</a></li>
+          <li><a href="index.html#solutions">Automotive Workshops</a></li>
+          <li><a href="index.html#solutions">Educational Facilities</a></li>
+          <li><a href="index.html#solutions">Community Platforms</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3: Company & Resources -->
+      <div class="footer-links-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#why-choose">About Us</a></li>
+          <li><a href="partner.html">Partner Program</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+        <h4 style="margin-top: 1.5rem;">Resources</h4>
+        <ul>
+          <li><a href="developer.html">Documentation</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="index.html#contact">Support</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Modules -->
+  <script src="script.js"></script>
+
+  <!-- Interactive script for previews tab switching -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.preview-tab');
+      const panes = document.querySelectorAll('.preview-pane');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          panes.forEach(p => p.classList.remove('active'));
+
+          tab.classList.add('active');
+          const targetId = tab.getAttribute('data-preview');
+          const targetPane = document.getElementById('pane' + targetId.charAt(0).toUpperCase() + targetId.slice(1));
+          if (targetPane) {
+            targetPane.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
