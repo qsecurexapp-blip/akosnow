@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://qsecurex.space/guides/akosnow-crm-lead-automation.html">
   <meta property="og:title" content="Akos Lead Automation & Push Alerts Guide | Akosnow">
   <meta property="og:description" content="Sub-100ms lead notification dispatches connecting landing page form submissions directly to Akos MSGE mobile apps.">
-  <meta property="og:image" content="../assets/gwag_1764444804643.png">
+  <meta property="og:image" content="/assets/gwag_1764444804643.png">
   <meta property="og:site_name" content="Akosnow B2B Software Guides">
 
   <!-- Twitter Card SEO -->
@@ -23,7 +23,11 @@
   <meta name="twitter:url" content="https://qsecurex.space/guides/akosnow-crm-lead-automation.html">
   <meta name="twitter:title" content="B2B Lead Automation & Push Alerts Guide">
   <meta name="twitter:description" content="Automate website lead dispatches and CRM push alerts.">
-  <meta name="twitter:image" content="../assets/gwag_1764444804643.png">
+  <meta name="twitter:image" content="/assets/gwag_1764444804643.png">
+
+  <!-- CSS & Favicon (Root Relative Paths for 100% Reliable Loading) -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/png" href="/assets/app_icon_1024_1764268476863.png">
 
   <!-- Structured Data JSON-LD Schemas -->
   <script type="application/ld+json">
@@ -57,14 +61,14 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="../index.html" class="logo">
-        <img src="../assets/app_icon_1024_1764268476863.png" alt="QSecureX Logo" class="logo-img">
+      <a href="/index.html" class="logo">
+        <img src="/assets/app_icon_1024_1764268476863.png" alt="QSecureX Logo" class="logo-img">
         <span class="logo-text">QSecure<span class="gradient-text">X</span></span>
         <span class="header-ecosystem-tag">by Akosnow</span>
       </a>
       <div class="header-actions">
-        <a href="../index.html" class="btn btn-outline">← Back to QSecureX</a>
-        <a href="../akosnow website/msge.html" class="btn btn-primary">MSGE Push Hub ↗</a>
+        <a href="/index.html" class="btn btn-outline">← Back to QSecureX</a>
+        <a href="/akosnow website/msge.html" class="btn btn-primary">MSGE Push Hub ↗</a>
       </div>
     </div>
   </header>
@@ -78,20 +82,12 @@
         Speed-to-lead is critical for B2B sales conversion. Research shows contacting a lead within 5 minutes increases conversion odds by 900%. <strong>Akosnow MSGE</strong> bridges landing page form submits directly to mobile push notifications in sub-100ms speeds.
       </p>
 
-      <h2 style="color: var(--primary); font-size: 1.6rem; margin: 32px 0 16px;">How Lead Automation Works with Akosnow MSGE</h2>
-      <ol style="margin: 0 0 24px 24px; display: flex; flex-direction: column; gap: 12px;">
-        <li><strong>Form Capture:</strong> Customer submits a contact or quote request form on any web page.</li>
-        <li><strong>REST Webhook Dispatch:</strong> Client script posts JSON data to <code>http://localhost:5001/api/business/lead</code> with target API Key.</li>
-        <li><strong>Firestore Real-Time Listener:</strong> MSGE engine writes alert to <code>akosnow_alerts</code> collection.</li>
-        <li><strong>Instant Mobile Chime:</strong> Workspace admin receives instant audio chime and push notification with 1-click WhatsApp/Call actions.</li>
-      </ol>
-
       <div style="margin-top: 40px; padding: 28px; background: rgba(74, 222, 128, 0.05); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 12px;">
         <h3 style="color: var(--text-main); margin-bottom: 12px;">Explore Akosnow MSGE Integration</h3>
         <p style="font-size: 0.95rem; margin-bottom: 16px;">Test real-time lead push triggers or view developer documentation.</p>
         <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <a href="../akosnow website/msge.html" class="btn btn-primary">Akosnow MSGE Page ↗</a>
-          <a href="../akosnow website/developer.html" class="btn btn-outline">Developer Sandbox ↗</a>
+          <a href="/akosnow website/msge.html" class="btn btn-primary">Akosnow MSGE Page ↗</a>
+          <a href="/akosnow website/developer.html" class="btn btn-outline">Developer Sandbox ↗</a>
         </div>
       </div>
     </div>
@@ -100,7 +96,7 @@
   <footer class="site-footer">
     <div class="container footer-bottom">
       <p>&copy; 2026 Akosnow & QSecureX. All rights reserved.</p>
-      <p><a href="../index.html">Back to Home</a></p>
+      <p><a href="/index.html">Back to Home</a></p>
     </div>
   </footer>
 </body>
