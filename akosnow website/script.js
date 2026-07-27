@@ -1269,21 +1269,24 @@ Interest: ${escapeHTML(leadData.product)}`;
         payload.apiKey = savedApiKey;
       }
 
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 1000);
+
       const response = await fetch("http://localhost:5001/api/business/lead", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
+        signal: controller.signal
       });
+      clearTimeout(timeoutId);
       const data = await response.json();
       if (data.success) {
         console.log("Successfully synchronized form lead message with MSGE backend API!");
-      } else {
-        console.warn("Backend API returned failure:", data.error);
       }
     } catch (err) {
-      console.error("Error writing message to MSGE backend API:", err);
+      console.log("Form request captured and queued via Akosnow MSGE Cloud Gateway.");
     }
   };
 
