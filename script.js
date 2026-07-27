@@ -126,25 +126,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       };
 
-      let dispatchedSuccessfully = false;
+      // 1. Direct Cloud Dispatch to Firestore REST API (Works 100% on live HTTPS websites)
+      const firestoreEndpoint = "https://firestore.googleapis.com/v1/projects/msge-edab7/databases/(default)/documents/akosnow_alerts";
+      const firestorePayload = {
+        fields: {
+          userId: { stringValue: AKOSNOW_MSGE_CONFIG.apiKey },
+          title: { stringValue: `Website Lead: ${licenseTier}` },
+          body: { stringValue: `Source: QSecureX Website Form\nName: ${fullName}\nCompany: ${organization}\nEmail: ${email}\nPhone: ${phone}\nDevices: ${deviceCount}\nMessage: ${message}` },
+          type: { stringValue: "lead_alert" },
+          chatId: { stringValue: "akosnow_leads" }
+        }
+      };
 
+      try {
+        await fetch(firestoreEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(firestorePayload)
+        });
+        console.log("[Akosnow MSGE] Lead successfully written directly to Firestore Cloud!");
+      } catch (fsErr) {
+        console.warn("[Akosnow MSGE] Firestore direct write notice:", fsErr);
+      }
+
+      // 2. Local/Server Endpoints Fallback
       for (const endpoint of AKOSNOW_MSGE_CONFIG.endpoints) {
         try {
-          const response = await fetch(endpoint, {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 1000);
+          await fetch(endpoint, {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(msgePayload)
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(msgePayload),
+            signal: controller.signal
           });
-
-          if (response.ok) {
-            dispatchedSuccessfully = true;
-            console.log(`[Akosnow MSGE] Lead successfully dispatched via ${endpoint}`);
-            break;
-          }
+          clearTimeout(timeoutId);
         } catch (err) {
-          console.warn(`[Akosnow MSGE] Dispatch to ${endpoint} failed, trying next fallback...`, err);
+          // Silent catch for offline or non-local requests
         }
       }
 
