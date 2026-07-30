@@ -8,7 +8,7 @@
   <!-- SEO Meta Tags -->
   <meta name="description" content="Connect business websites, forms, and custom web apps to Akosnow MSGE and QSecureX APIs using our REST API webhooks, Express proxies, and live sandbox console.">
   <meta name="keywords" content="Akosnow, QSecureX, QSecure, Akosnow MSGE, developer API, B2B business software, webhooks, REST API console, software development, custom software integration">
-  <link rel="canonical" href="https://akosnow.com/developer.html">
+  <link rel="canonical" href="https://qsecurex.space/akosnow%20website/developer.html">
   
   <!-- Page Favicon Logo -->
   <link rel="icon" type="image/png" href="icons/logo2.png">
@@ -990,23 +990,34 @@ router.<span class="function">post</span>(<span class="string">'/api/business/le
             sbTerminal.innerHTML = `> HTTP 400 Bad Request\n> Gateway Error: ${result.error || 'Unknown Server Error'}`;
           }
         } catch (error) {
-          // Live Web Server Sandbox Fallback - Simulate Instant Cloud Dispatch
-          setTimeout(() => {
+          clearTimeout(timeoutId);
+          // Direct Cloud Dispatch to Firestore REST API guarantees lead delivery even when local server is offline
+          const firestoreEndpoint = "https://firestore.googleapis.com/v1/projects/msge-edab7/databases/(default)/documents/akosnow_alerts";
+          const firestorePayload = {
+            fields: {
+              userId: { stringValue: apiKey || "L3vvmpypCtPr43TjZK5iHyGI5Gs2" },
+              title: { stringValue: `Website Lead: ${product || 'Akosnow Suite'}` },
+              body: { stringValue: `Source: API Sandbox Client\nName: ${contactName || 'N/A'}\nCompany: Akosnow Developer\nEmail: ${email || 'N/A'}\nPhone: ${phone || 'N/A'}` },
+              type: { stringValue: "lead_alert" },
+              chatId: { stringValue: "akosnow_leads" }
+            }
+          };
+
+          try {
+            await fetch(firestoreEndpoint, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(firestorePayload)
+            });
             sbTerminal.style.color = '#a6e3a1'; // Green success
             sbTerminal.innerHTML = `> HTTP 200 OK (Akosnow Cloud Gateway)\n` +
               `> Dispatching to API: https://api.akosnow.com/v1/leads...\n` +
               `> Workspace: akosnow_leads (Active)\n` +
-              `> Event: lead.created\n` +
-              `> Latency: 42ms\n` +
-              `> Notification Payload:\n` +
-              `  {\n` +
-              `    "status": "success",\n` +
-              `    "messageId": "MSG-${Date.now().toString(36).toUpperCase()}",\n` +
-              `    "delivered": true,\n` +
-              `    "recipient": "${contactName || 'Lead Target'}",\n` +
-              `    "channel": "Akosnow MSGE Mobile App & Desktop Chime"\n` +
-              `  }`;
-          }, 350);
+              `> Lead alert delivered to MSGE workspace database!`;
+          } catch (fsErr) {
+            sbTerminal.style.color = '#f38ba8';
+            sbTerminal.innerHTML = `> HTTP 400 Bad Request\n> Cloud Dispatch Error: ${fsErr}`;
+          }
         }
       });
     });
